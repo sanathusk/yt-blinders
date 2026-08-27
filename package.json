@@ -1,0 +1,30 @@
+{
+	"name": "yt-blinders",
+	"version": "1.0.0",
+	"description": "YouTube Thumbnail & Card Grey-Out Chrome Extension",
+	"type": "module",
+	"scripts": {
+		"generate-icons": "node scripts/generate-icons.js",
+		"build": "tsc && vite build",
+		"check:fix": "npx @biomejs/biome check --write",
+		"dev": "vite build --watch",
+		"verify": "node scripts/verify-extension.js"
+	},
+	"keywords": [
+		"chrome-extension",
+		"youtube",
+		"productivity",
+		"focus",
+		"manifest-v3"
+	],
+	"author": "",
+	"license": "MIT",
+	"devDependencies": {
+		"@biomejs/biome": "2.5.10",
+		"@types/chrome": "^0.0.280",
+		"@types/node": "^26.4.0",
+		"typescript": "^5.7.3",
+		"vite": "^6.0.0",
+		"vite-plugin-static-copy": "^2.2.0"
+	}
+}

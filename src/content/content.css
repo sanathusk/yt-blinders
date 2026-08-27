@@ -1,0 +1,1099 @@
+/* YT Blinders - Content Styles */
+
+:root {
+	--ytb-placeholder-bg: #e5e5e5;
+	--ytb-placeholder-card-bg: #ececec;
+}
+
+html[dark],
+[dark] {
+	--ytb-placeholder-bg: #282828;
+	--ytb-placeholder-card-bg: #212121;
+}
+
+/* ==========================================================================
+   1. HOME FEED (data-ytb-home)
+   ========================================================================== */
+
+/* Mode: Thumbnail */
+html[data-ytb-home="thumbnail"][data-ytb-page="home"]
+	ytd-rich-item-renderer
+	ytd-thumbnail,
+html[data-ytb-home="thumbnail"][data-ytb-page="home"]
+	ytd-rich-item-renderer
+	yt-thumbnail-view-model,
+html[data-ytb-home="thumbnail"][data-ytb-page="home"]
+	ytd-rich-item-renderer
+	yt-lockup-view-model
+	yt-thumbnail-view-model,
+html[data-ytb-home="thumbnail"][data-ytb-page="home"]
+	ytd-rich-grid-media
+	ytd-thumbnail,
+html[data-ytb-home="thumbnail"][data-ytb-page="home"]
+	ytd-rich-grid-media
+	yt-thumbnail-view-model,
+html[data-ytb-home="thumbnail"][data-ytb-page="home"]
+	ytd-rich-grid-slim-media
+	ytd-thumbnail,
+html[data-ytb-home="thumbnail"][data-ytb-page="home"]
+	ytd-rich-grid-slim-media
+	yt-thumbnail-view-model,
+html[data-ytb-home="thumbnail"][data-ytb-page="home"]
+	ytd-rich-shelf-renderer
+	ytd-thumbnail,
+html[data-ytb-home="thumbnail"][data-ytb-page="home"]
+	ytd-rich-shelf-renderer
+	yt-thumbnail-view-model,
+html[data-ytb-home="thumbnail"][data-ytb-page="home"]
+	ytd-reel-item-renderer
+	#thumbnail,
+html[data-ytb-home="thumbnail"][data-ytb-page="home"]
+	ytd-reel-item-renderer
+	yt-thumbnail-view-model,
+html[data-ytb-home="thumbnail"][data-ytb-page="home"]
+	ytd-rich-item-renderer
+	#avatar-container,
+html[data-ytb-home="thumbnail"][data-ytb-page="home"]
+	ytd-rich-item-renderer
+	yt-decorated-avatar-view-model {
+	background-color: var(--ytb-placeholder-bg);
+	position: relative;
+	overflow: hidden;
+}
+
+html[data-ytb-home="thumbnail"][data-ytb-page="home"]
+	ytd-rich-item-renderer
+	ytd-thumbnail
+	yt-image,
+html[data-ytb-home="thumbnail"][data-ytb-page="home"]
+	ytd-rich-item-renderer
+	ytd-thumbnail
+	img,
+html[data-ytb-home="thumbnail"][data-ytb-page="home"]
+	ytd-rich-item-renderer
+	ytd-thumbnail
+	#hover-overlays,
+html[data-ytb-home="thumbnail"][data-ytb-page="home"]
+	ytd-rich-item-renderer
+	ytd-thumbnail
+	#overlays,
+html[data-ytb-home="thumbnail"][data-ytb-page="home"]
+	ytd-rich-item-renderer
+	ytd-thumbnail
+	ytd-player,
+html[data-ytb-home="thumbnail"][data-ytb-page="home"]
+	ytd-rich-item-renderer
+	yt-thumbnail-view-model
+	img,
+html[data-ytb-home="thumbnail"][data-ytb-page="home"]
+	ytd-rich-item-renderer
+	yt-thumbnail-view-model
+	yt-image,
+html[data-ytb-home="thumbnail"][data-ytb-page="home"]
+	ytd-rich-item-renderer
+	yt-thumbnail-view-model
+	yt-image-view-model,
+html[data-ytb-home="thumbnail"][data-ytb-page="home"]
+	ytd-rich-item-renderer
+	yt-thumbnail-view-model
+	yt-animated-image-view-model,
+html[data-ytb-home="thumbnail"][data-ytb-page="home"]
+	ytd-rich-item-renderer
+	yt-thumbnail-view-model
+	yt-thumbnail-overlay-view-model,
+html[data-ytb-home="thumbnail"][data-ytb-page="home"]
+	ytd-rich-item-renderer
+	ytd-moving-thumbnail-renderer,
+html[data-ytb-home="thumbnail"][data-ytb-page="home"]
+	ytd-rich-item-renderer
+	ytd-video-preview,
+html[data-ytb-home="thumbnail"][data-ytb-page="home"]
+	ytd-rich-item-renderer
+	#inline-preview-player,
+html[data-ytb-home="thumbnail"][data-ytb-page="home"]
+	ytd-rich-item-renderer
+	#preview,
+html[data-ytb-home="thumbnail"][data-ytb-page="home"]
+	ytd-rich-item-renderer
+	ytd-thumbnail
+	video,
+html[data-ytb-home="thumbnail"][data-ytb-page="home"]
+	ytd-rich-item-renderer
+	yt-thumbnail-view-model
+	video,
+html[data-ytb-home="thumbnail"][data-ytb-page="home"]
+	ytd-rich-item-renderer
+	#avatar-container
+	img,
+html[data-ytb-home="thumbnail"][data-ytb-page="home"]
+	ytd-rich-item-renderer
+	yt-decorated-avatar-view-model
+	img,
+html[data-ytb-home="thumbnail"][data-ytb-page="home"]
+	ytd-reel-item-renderer
+	#thumbnail
+	img,
+html[data-ytb-home="thumbnail"][data-ytb-page="home"]
+	ytd-reel-item-renderer
+	yt-thumbnail-view-model
+	img {
+	opacity: 0;
+}
+
+/* Mode: Thumbnail (Reveal on Hover when enabled) */
+html[data-ytb-reveal-hover="true"][data-ytb-home="thumbnail"][data-ytb-page="home"]
+	ytd-rich-item-renderer
+	ytd-thumbnail:hover
+	yt-image,
+html[data-ytb-reveal-hover="true"][data-ytb-home="thumbnail"][data-ytb-page="home"]
+	ytd-rich-item-renderer
+	ytd-thumbnail:hover
+	img,
+html[data-ytb-reveal-hover="true"][data-ytb-home="thumbnail"][data-ytb-page="home"]
+	ytd-rich-item-renderer
+	ytd-thumbnail:hover
+	#hover-overlays,
+html[data-ytb-reveal-hover="true"][data-ytb-home="thumbnail"][data-ytb-page="home"]
+	ytd-rich-item-renderer
+	ytd-thumbnail:hover
+	#overlays,
+html[data-ytb-reveal-hover="true"][data-ytb-home="thumbnail"][data-ytb-page="home"]
+	ytd-rich-item-renderer
+	ytd-thumbnail:hover
+	ytd-player,
+html[data-ytb-reveal-hover="true"][data-ytb-home="thumbnail"][data-ytb-page="home"]
+	ytd-rich-item-renderer
+	yt-thumbnail-view-model:hover
+	img,
+html[data-ytb-reveal-hover="true"][data-ytb-home="thumbnail"][data-ytb-page="home"]
+	ytd-rich-item-renderer
+	yt-thumbnail-view-model:hover
+	yt-image,
+html[data-ytb-reveal-hover="true"][data-ytb-home="thumbnail"][data-ytb-page="home"]
+	ytd-rich-item-renderer
+	yt-thumbnail-view-model:hover
+	yt-image-view-model,
+html[data-ytb-reveal-hover="true"][data-ytb-home="thumbnail"][data-ytb-page="home"]
+	ytd-rich-item-renderer
+	yt-thumbnail-view-model:hover
+	yt-animated-image-view-model,
+html[data-ytb-reveal-hover="true"][data-ytb-home="thumbnail"][data-ytb-page="home"]
+	ytd-rich-item-renderer
+	yt-thumbnail-view-model:hover
+	yt-thumbnail-overlay-view-model,
+html[data-ytb-reveal-hover="true"][data-ytb-home="thumbnail"][data-ytb-page="home"]
+	ytd-rich-item-renderer:hover
+	ytd-moving-thumbnail-renderer,
+html[data-ytb-reveal-hover="true"][data-ytb-home="thumbnail"][data-ytb-page="home"]
+	ytd-rich-item-renderer:hover
+	ytd-video-preview,
+html[data-ytb-reveal-hover="true"][data-ytb-home="thumbnail"][data-ytb-page="home"]
+	ytd-rich-item-renderer:hover
+	#inline-preview-player,
+html[data-ytb-reveal-hover="true"][data-ytb-home="thumbnail"][data-ytb-page="home"]
+	ytd-rich-item-renderer:hover
+	#preview,
+html[data-ytb-reveal-hover="true"][data-ytb-home="thumbnail"][data-ytb-page="home"]
+	ytd-rich-item-renderer
+	ytd-thumbnail:hover
+	video,
+html[data-ytb-reveal-hover="true"][data-ytb-home="thumbnail"][data-ytb-page="home"]
+	ytd-rich-item-renderer
+	yt-thumbnail-view-model:hover
+	video,
+html[data-ytb-reveal-hover="true"][data-ytb-home="thumbnail"][data-ytb-page="home"]
+	ytd-rich-grid-media
+	ytd-thumbnail:hover
+	img,
+html[data-ytb-reveal-hover="true"][data-ytb-home="thumbnail"][data-ytb-page="home"]
+	ytd-rich-grid-media
+	yt-thumbnail-view-model:hover
+	img,
+html[data-ytb-reveal-hover="true"][data-ytb-home="thumbnail"][data-ytb-page="home"]
+	ytd-reel-item-renderer
+	#thumbnail:hover
+	img,
+html[data-ytb-reveal-hover="true"][data-ytb-home="thumbnail"][data-ytb-page="home"]
+	ytd-reel-item-renderer
+	yt-thumbnail-view-model:hover
+	img,
+html[data-ytb-reveal-hover="true"][data-ytb-home="thumbnail"][data-ytb-page="home"]
+	ytd-rich-item-renderer
+	#avatar-container:hover
+	img,
+html[data-ytb-reveal-hover="true"][data-ytb-home="thumbnail"][data-ytb-page="home"]
+	ytd-rich-item-renderer
+	yt-decorated-avatar-view-model:hover
+	img {
+	opacity: 1;
+}
+
+/* Mode: Full Card */
+html[data-ytb-home="card"][data-ytb-page="home"]
+	ytd-rich-item-renderer
+	yt-lockup-view-model,
+html[data-ytb-home="card"][data-ytb-page="home"]
+	ytd-rich-item-renderer
+	#content,
+html[data-ytb-home="card"][data-ytb-page="home"] ytd-rich-grid-media #content,
+html[data-ytb-home="card"][data-ytb-page="home"]
+	ytd-rich-grid-slim-media
+	#content,
+html[data-ytb-home="card"][data-ytb-page="home"]
+	ytd-rich-section-renderer
+	#content {
+	background-color: var(--ytb-placeholder-card-bg);
+	border-radius: 12px;
+	pointer-events: none;
+	user-select: none;
+	position: relative;
+}
+
+html[data-ytb-home="card"][data-ytb-page="home"]
+	ytd-rich-item-renderer
+	yt-lockup-view-model
+	> *,
+html[data-ytb-home="card"][data-ytb-page="home"]
+	ytd-rich-item-renderer
+	#content
+	> *,
+html[data-ytb-home="card"][data-ytb-page="home"]
+	ytd-rich-grid-media
+	#content
+	> *,
+html[data-ytb-home="card"][data-ytb-page="home"]
+	ytd-rich-grid-slim-media
+	#content
+	> *,
+html[data-ytb-home="card"][data-ytb-page="home"]
+	ytd-rich-section-renderer
+	#content
+	> * {
+	opacity: 0;
+	pointer-events: none;
+}
+
+/* ==========================================================================
+   2. SEARCH RESULTS (data-ytb-search)
+   ========================================================================== */
+
+/* Mode: Thumbnail */
+html[data-ytb-search="thumbnail"][data-ytb-page="search"]
+	ytd-video-renderer
+	ytd-thumbnail,
+html[data-ytb-search="thumbnail"][data-ytb-page="search"]
+	ytd-video-renderer
+	yt-thumbnail-view-model,
+html[data-ytb-search="thumbnail"][data-ytb-page="search"]
+	ytd-video-renderer
+	yt-lockup-view-model
+	yt-thumbnail-view-model,
+html[data-ytb-search="thumbnail"][data-ytb-page="search"]
+	ytd-radio-renderer
+	ytd-thumbnail,
+html[data-ytb-search="thumbnail"][data-ytb-page="search"]
+	ytd-radio-renderer
+	yt-thumbnail-view-model,
+html[data-ytb-search="thumbnail"][data-ytb-page="search"]
+	ytd-playlist-renderer
+	ytd-playlist-thumbnail,
+html[data-ytb-search="thumbnail"][data-ytb-page="search"]
+	ytd-playlist-renderer
+	yt-thumbnail-view-model,
+html[data-ytb-search="thumbnail"][data-ytb-page="search"]
+	ytd-channel-renderer
+	#avatar-container,
+html[data-ytb-search="thumbnail"][data-ytb-page="search"]
+	ytd-channel-renderer
+	yt-decorated-avatar-view-model,
+html[data-ytb-search="thumbnail"][data-ytb-page="search"]
+	ytd-video-renderer
+	#channel-thumbnail,
+html[data-ytb-search="thumbnail"][data-ytb-page="search"]
+	ytd-video-renderer
+	#avatar-container,
+html[data-ytb-search="thumbnail"][data-ytb-page="search"]
+	ytd-video-renderer
+	yt-decorated-avatar-view-model,
+html[data-ytb-search="thumbnail"][data-ytb-page="search"]
+	ytd-reel-item-renderer
+	#thumbnail,
+html[data-ytb-search="thumbnail"][data-ytb-page="search"]
+	ytd-reel-item-renderer
+	yt-thumbnail-view-model {
+	background-color: var(--ytb-placeholder-bg);
+	position: relative;
+	overflow: hidden;
+}
+
+html[data-ytb-search="thumbnail"][data-ytb-page="search"]
+	ytd-video-renderer
+	ytd-thumbnail
+	yt-image,
+html[data-ytb-search="thumbnail"][data-ytb-page="search"]
+	ytd-video-renderer
+	ytd-thumbnail
+	img,
+html[data-ytb-search="thumbnail"][data-ytb-page="search"]
+	ytd-video-renderer
+	ytd-thumbnail
+	#hover-overlays,
+html[data-ytb-search="thumbnail"][data-ytb-page="search"]
+	ytd-video-renderer
+	ytd-thumbnail
+	#overlays,
+html[data-ytb-search="thumbnail"][data-ytb-page="search"]
+	ytd-video-renderer
+	yt-thumbnail-view-model
+	img,
+html[data-ytb-search="thumbnail"][data-ytb-page="search"]
+	ytd-video-renderer
+	yt-thumbnail-view-model
+	yt-image,
+html[data-ytb-search="thumbnail"][data-ytb-page="search"]
+	ytd-video-renderer
+	yt-thumbnail-view-model
+	yt-image-view-model,
+html[data-ytb-search="thumbnail"][data-ytb-page="search"]
+	ytd-video-renderer
+	yt-thumbnail-view-model
+	yt-animated-image-view-model,
+html[data-ytb-search="thumbnail"][data-ytb-page="search"]
+	ytd-video-renderer
+	yt-thumbnail-view-model
+	yt-thumbnail-overlay-view-model,
+html[data-ytb-search="thumbnail"][data-ytb-page="search"]
+	ytd-video-renderer
+	ytd-moving-thumbnail-renderer,
+html[data-ytb-search="thumbnail"][data-ytb-page="search"]
+	ytd-video-renderer
+	ytd-video-preview,
+html[data-ytb-search="thumbnail"][data-ytb-page="search"]
+	ytd-video-renderer
+	#inline-preview-player,
+html[data-ytb-search="thumbnail"][data-ytb-page="search"]
+	ytd-video-renderer
+	#preview,
+html[data-ytb-search="thumbnail"][data-ytb-page="search"]
+	ytd-video-renderer
+	ytd-thumbnail
+	video,
+html[data-ytb-search="thumbnail"][data-ytb-page="search"]
+	ytd-video-renderer
+	yt-thumbnail-view-model
+	video,
+html[data-ytb-search="thumbnail"][data-ytb-page="search"]
+	ytd-radio-renderer
+	ytd-thumbnail
+	img,
+html[data-ytb-search="thumbnail"][data-ytb-page="search"]
+	ytd-playlist-renderer
+	ytd-playlist-thumbnail
+	img,
+html[data-ytb-search="thumbnail"][data-ytb-page="search"]
+	ytd-playlist-renderer
+	yt-thumbnail-view-model
+	img,
+html[data-ytb-search="thumbnail"][data-ytb-page="search"]
+	ytd-channel-renderer
+	#avatar-container
+	img,
+html[data-ytb-search="thumbnail"][data-ytb-page="search"]
+	ytd-channel-renderer
+	yt-decorated-avatar-view-model
+	img,
+html[data-ytb-search="thumbnail"][data-ytb-page="search"]
+	ytd-video-renderer
+	#channel-thumbnail
+	img,
+html[data-ytb-search="thumbnail"][data-ytb-page="search"]
+	ytd-video-renderer
+	#avatar-container
+	img,
+html[data-ytb-search="thumbnail"][data-ytb-page="search"]
+	ytd-video-renderer
+	yt-decorated-avatar-view-model
+	img,
+html[data-ytb-search="thumbnail"][data-ytb-page="search"]
+	ytd-reel-item-renderer
+	#thumbnail
+	img,
+html[data-ytb-search="thumbnail"][data-ytb-page="search"]
+	ytd-reel-item-renderer
+	yt-thumbnail-view-model
+	img {
+	opacity: 0;
+}
+
+/* Mode: Thumbnail (Reveal on Hover when enabled) */
+html[data-ytb-reveal-hover="true"][data-ytb-search="thumbnail"][data-ytb-page="search"]
+	ytd-video-renderer
+	ytd-thumbnail:hover
+	yt-image,
+html[data-ytb-reveal-hover="true"][data-ytb-search="thumbnail"][data-ytb-page="search"]
+	ytd-video-renderer
+	ytd-thumbnail:hover
+	img,
+html[data-ytb-reveal-hover="true"][data-ytb-search="thumbnail"][data-ytb-page="search"]
+	ytd-video-renderer
+	ytd-thumbnail:hover
+	#hover-overlays,
+html[data-ytb-reveal-hover="true"][data-ytb-search="thumbnail"][data-ytb-page="search"]
+	ytd-video-renderer
+	ytd-thumbnail:hover
+	#overlays,
+html[data-ytb-reveal-hover="true"][data-ytb-search="thumbnail"][data-ytb-page="search"]
+	ytd-video-renderer
+	yt-thumbnail-view-model:hover
+	img,
+html[data-ytb-reveal-hover="true"][data-ytb-search="thumbnail"][data-ytb-page="search"]
+	ytd-video-renderer
+	yt-thumbnail-view-model:hover
+	yt-image,
+html[data-ytb-reveal-hover="true"][data-ytb-search="thumbnail"][data-ytb-page="search"]
+	ytd-video-renderer
+	yt-thumbnail-view-model:hover
+	yt-image-view-model,
+html[data-ytb-reveal-hover="true"][data-ytb-search="thumbnail"][data-ytb-page="search"]
+	ytd-video-renderer
+	yt-thumbnail-view-model:hover
+	yt-animated-image-view-model,
+html[data-ytb-reveal-hover="true"][data-ytb-search="thumbnail"][data-ytb-page="search"]
+	ytd-video-renderer
+	yt-thumbnail-view-model:hover
+	yt-thumbnail-overlay-view-model,
+html[data-ytb-reveal-hover="true"][data-ytb-search="thumbnail"][data-ytb-page="search"]
+	ytd-video-renderer:hover
+	ytd-moving-thumbnail-renderer,
+html[data-ytb-reveal-hover="true"][data-ytb-search="thumbnail"][data-ytb-page="search"]
+	ytd-video-renderer:hover
+	ytd-video-preview,
+html[data-ytb-reveal-hover="true"][data-ytb-search="thumbnail"][data-ytb-page="search"]
+	ytd-video-renderer:hover
+	#inline-preview-player,
+html[data-ytb-reveal-hover="true"][data-ytb-search="thumbnail"][data-ytb-page="search"]
+	ytd-video-renderer:hover
+	#preview,
+html[data-ytb-reveal-hover="true"][data-ytb-search="thumbnail"][data-ytb-page="search"]
+	ytd-video-renderer
+	ytd-thumbnail:hover
+	video,
+html[data-ytb-reveal-hover="true"][data-ytb-search="thumbnail"][data-ytb-page="search"]
+	ytd-video-renderer
+	yt-thumbnail-view-model:hover
+	video,
+html[data-ytb-reveal-hover="true"][data-ytb-search="thumbnail"][data-ytb-page="search"]
+	ytd-radio-renderer
+	ytd-thumbnail:hover
+	img,
+html[data-ytb-reveal-hover="true"][data-ytb-search="thumbnail"][data-ytb-page="search"]
+	ytd-playlist-renderer
+	ytd-playlist-thumbnail:hover
+	img,
+html[data-ytb-reveal-hover="true"][data-ytb-search="thumbnail"][data-ytb-page="search"]
+	ytd-playlist-renderer
+	yt-thumbnail-view-model:hover
+	img,
+html[data-ytb-reveal-hover="true"][data-ytb-search="thumbnail"][data-ytb-page="search"]
+	ytd-channel-renderer
+	#avatar-container:hover
+	img,
+html[data-ytb-reveal-hover="true"][data-ytb-search="thumbnail"][data-ytb-page="search"]
+	ytd-channel-renderer
+	yt-decorated-avatar-view-model:hover
+	img,
+html[data-ytb-reveal-hover="true"][data-ytb-search="thumbnail"][data-ytb-page="search"]
+	ytd-video-renderer
+	#channel-thumbnail:hover
+	img,
+html[data-ytb-reveal-hover="true"][data-ytb-search="thumbnail"][data-ytb-page="search"]
+	ytd-video-renderer
+	#avatar-container:hover
+	img,
+html[data-ytb-reveal-hover="true"][data-ytb-search="thumbnail"][data-ytb-page="search"]
+	ytd-video-renderer
+	yt-decorated-avatar-view-model:hover
+	img,
+html[data-ytb-reveal-hover="true"][data-ytb-search="thumbnail"][data-ytb-page="search"]
+	ytd-reel-item-renderer
+	#thumbnail:hover
+	img,
+html[data-ytb-reveal-hover="true"][data-ytb-search="thumbnail"][data-ytb-page="search"]
+	ytd-reel-item-renderer
+	yt-thumbnail-view-model:hover
+	img {
+	opacity: 1;
+}
+
+/* Mode: Full Card */
+html[data-ytb-search="card"][data-ytb-page="search"]
+	ytd-video-renderer
+	yt-lockup-view-model,
+html[data-ytb-search="card"][data-ytb-page="search"]
+	ytd-video-renderer
+	#dismissible,
+html[data-ytb-search="card"][data-ytb-page="search"]
+	ytd-radio-renderer
+	#dismissible,
+html[data-ytb-search="card"][data-ytb-page="search"]
+	ytd-playlist-renderer
+	#content,
+html[data-ytb-search="card"][data-ytb-page="search"]
+	ytd-channel-renderer
+	#content-section,
+html[data-ytb-search="card"][data-ytb-page="search"]
+	ytd-shelf-renderer
+	#dismissible,
+html[data-ytb-search="card"][data-ytb-page="search"]
+	ytd-reel-shelf-renderer
+	#dismissible {
+	background-color: var(--ytb-placeholder-card-bg);
+	border-radius: 12px;
+	pointer-events: none;
+	user-select: none;
+	position: relative;
+}
+
+html[data-ytb-search="card"][data-ytb-page="search"]
+	ytd-video-renderer
+	yt-lockup-view-model
+	> *,
+html[data-ytb-search="card"][data-ytb-page="search"]
+	ytd-video-renderer
+	#dismissible
+	> *,
+html[data-ytb-search="card"][data-ytb-page="search"]
+	ytd-radio-renderer
+	#dismissible
+	> *,
+html[data-ytb-search="card"][data-ytb-page="search"]
+	ytd-playlist-renderer
+	#content
+	> *,
+html[data-ytb-search="card"][data-ytb-page="search"]
+	ytd-channel-renderer
+	#content-section
+	> *,
+html[data-ytb-search="card"][data-ytb-page="search"]
+	ytd-shelf-renderer
+	#dismissible
+	> *,
+html[data-ytb-search="card"][data-ytb-page="search"]
+	ytd-reel-shelf-renderer
+	#dismissible
+	> * {
+	opacity: 0;
+	pointer-events: none;
+}
+
+/* ==========================================================================
+   3. RELATED VIDEOS (data-ytb-related)
+   ========================================================================== */
+
+/* Mode: Thumbnail */
+html[data-ytb-related="thumbnail"][data-ytb-page="watch"]
+	ytd-watch-next-secondary-results-renderer
+	ytd-compact-video-renderer
+	ytd-thumbnail,
+html[data-ytb-related="thumbnail"][data-ytb-page="watch"]
+	ytd-watch-next-secondary-results-renderer
+	ytd-compact-video-renderer
+	yt-thumbnail-view-model,
+html[data-ytb-related="thumbnail"][data-ytb-page="watch"]
+	ytd-watch-next-secondary-results-renderer
+	ytd-compact-radio-renderer
+	ytd-thumbnail,
+html[data-ytb-related="thumbnail"][data-ytb-page="watch"]
+	ytd-watch-next-secondary-results-renderer
+	ytd-compact-radio-renderer
+	yt-thumbnail-view-model,
+html[data-ytb-related="thumbnail"][data-ytb-page="watch"]
+	ytd-watch-next-secondary-results-renderer
+	ytd-compact-playlist-renderer
+	ytd-playlist-thumbnail,
+html[data-ytb-related="thumbnail"][data-ytb-page="watch"]
+	ytd-watch-next-secondary-results-renderer
+	ytd-compact-playlist-renderer
+	yt-thumbnail-view-model,
+html[data-ytb-related="thumbnail"][data-ytb-page="watch"]
+	#related
+	ytd-compact-video-renderer
+	ytd-thumbnail,
+html[data-ytb-related="thumbnail"][data-ytb-page="watch"]
+	#related
+	ytd-compact-video-renderer
+	yt-thumbnail-view-model,
+html[data-ytb-related="thumbnail"][data-ytb-page="watch"]
+	#related
+	ytd-compact-radio-renderer
+	ytd-thumbnail,
+html[data-ytb-related="thumbnail"][data-ytb-page="watch"]
+	#related
+	ytd-compact-radio-renderer
+	yt-thumbnail-view-model,
+html[data-ytb-related="thumbnail"][data-ytb-page="watch"]
+	#related
+	ytd-compact-playlist-renderer
+	ytd-playlist-thumbnail,
+html[data-ytb-related="thumbnail"][data-ytb-page="watch"]
+	#related
+	ytd-compact-playlist-renderer
+	yt-thumbnail-view-model,
+html[data-ytb-related="thumbnail"][data-ytb-page="watch"]
+	#related
+	yt-lockup-view-model
+	yt-thumbnail-view-model {
+	background-color: var(--ytb-placeholder-bg);
+	position: relative;
+	overflow: hidden;
+}
+
+html[data-ytb-related="thumbnail"][data-ytb-page="watch"]
+	ytd-watch-next-secondary-results-renderer
+	ytd-compact-video-renderer
+	ytd-thumbnail
+	yt-image,
+html[data-ytb-related="thumbnail"][data-ytb-page="watch"]
+	ytd-watch-next-secondary-results-renderer
+	ytd-compact-video-renderer
+	ytd-thumbnail
+	img,
+html[data-ytb-related="thumbnail"][data-ytb-page="watch"]
+	ytd-watch-next-secondary-results-renderer
+	ytd-compact-video-renderer
+	ytd-thumbnail
+	#overlays,
+html[data-ytb-related="thumbnail"][data-ytb-page="watch"]
+	ytd-watch-next-secondary-results-renderer
+	ytd-compact-video-renderer
+	yt-thumbnail-view-model
+	img,
+html[data-ytb-related="thumbnail"][data-ytb-page="watch"]
+	ytd-watch-next-secondary-results-renderer
+	ytd-compact-video-renderer
+	yt-thumbnail-view-model
+	yt-image,
+html[data-ytb-related="thumbnail"][data-ytb-page="watch"]
+	ytd-watch-next-secondary-results-renderer
+	ytd-compact-video-renderer
+	yt-thumbnail-view-model
+	yt-image-view-model,
+html[data-ytb-related="thumbnail"][data-ytb-page="watch"]
+	ytd-watch-next-secondary-results-renderer
+	ytd-compact-video-renderer
+	yt-thumbnail-view-model
+	yt-animated-image-view-model,
+html[data-ytb-related="thumbnail"][data-ytb-page="watch"]
+	ytd-watch-next-secondary-results-renderer
+	ytd-compact-video-renderer
+	yt-thumbnail-overlay-view-model,
+html[data-ytb-related="thumbnail"][data-ytb-page="watch"]
+	ytd-watch-next-secondary-results-renderer
+	ytd-compact-video-renderer
+	ytd-moving-thumbnail-renderer,
+html[data-ytb-related="thumbnail"][data-ytb-page="watch"]
+	ytd-watch-next-secondary-results-renderer
+	ytd-compact-video-renderer
+	ytd-video-preview,
+html[data-ytb-related="thumbnail"][data-ytb-page="watch"]
+	ytd-watch-next-secondary-results-renderer
+	ytd-compact-video-renderer
+	video,
+html[data-ytb-related="thumbnail"][data-ytb-page="watch"]
+	#related
+	ytd-compact-video-renderer
+	ytd-thumbnail
+	yt-image,
+html[data-ytb-related="thumbnail"][data-ytb-page="watch"]
+	#related
+	ytd-compact-video-renderer
+	ytd-thumbnail
+	img,
+html[data-ytb-related="thumbnail"][data-ytb-page="watch"]
+	#related
+	ytd-compact-video-renderer
+	ytd-thumbnail
+	#overlays,
+html[data-ytb-related="thumbnail"][data-ytb-page="watch"]
+	#related
+	ytd-compact-video-renderer
+	yt-thumbnail-view-model
+	img,
+html[data-ytb-related="thumbnail"][data-ytb-page="watch"]
+	#related
+	ytd-compact-video-renderer
+	yt-thumbnail-view-model
+	yt-image,
+html[data-ytb-related="thumbnail"][data-ytb-page="watch"]
+	#related
+	ytd-compact-video-renderer
+	yt-thumbnail-view-model
+	yt-image-view-model,
+html[data-ytb-related="thumbnail"][data-ytb-page="watch"]
+	#related
+	ytd-compact-video-renderer
+	yt-thumbnail-view-model
+	yt-animated-image-view-model,
+html[data-ytb-related="thumbnail"][data-ytb-page="watch"]
+	#related
+	ytd-compact-video-renderer
+	yt-thumbnail-overlay-view-model,
+html[data-ytb-related="thumbnail"][data-ytb-page="watch"]
+	#related
+	ytd-compact-video-renderer
+	ytd-moving-thumbnail-renderer,
+html[data-ytb-related="thumbnail"][data-ytb-page="watch"]
+	#related
+	ytd-compact-video-renderer
+	ytd-video-preview,
+html[data-ytb-related="thumbnail"][data-ytb-page="watch"]
+	#related
+	ytd-compact-video-renderer
+	video,
+html[data-ytb-related="thumbnail"][data-ytb-page="watch"]
+	#related
+	yt-lockup-view-model
+	yt-thumbnail-view-model
+	img {
+	opacity: 0;
+}
+
+/* Mode: Thumbnail (Reveal on Hover when enabled) */
+html[data-ytb-reveal-hover="true"][data-ytb-related="thumbnail"][data-ytb-page="watch"]
+	ytd-watch-next-secondary-results-renderer
+	ytd-compact-video-renderer
+	ytd-thumbnail:hover
+	yt-image,
+html[data-ytb-reveal-hover="true"][data-ytb-related="thumbnail"][data-ytb-page="watch"]
+	ytd-watch-next-secondary-results-renderer
+	ytd-compact-video-renderer
+	ytd-thumbnail:hover
+	img,
+html[data-ytb-reveal-hover="true"][data-ytb-related="thumbnail"][data-ytb-page="watch"]
+	ytd-watch-next-secondary-results-renderer
+	ytd-compact-video-renderer
+	ytd-thumbnail:hover
+	#overlays,
+html[data-ytb-reveal-hover="true"][data-ytb-related="thumbnail"][data-ytb-page="watch"]
+	ytd-watch-next-secondary-results-renderer
+	ytd-compact-video-renderer
+	yt-thumbnail-view-model:hover
+	img,
+html[data-ytb-reveal-hover="true"][data-ytb-related="thumbnail"][data-ytb-page="watch"]
+	ytd-watch-next-secondary-results-renderer
+	ytd-compact-video-renderer
+	yt-thumbnail-view-model:hover
+	yt-image,
+html[data-ytb-reveal-hover="true"][data-ytb-related="thumbnail"][data-ytb-page="watch"]
+	ytd-watch-next-secondary-results-renderer
+	ytd-compact-video-renderer
+	yt-thumbnail-view-model:hover
+	yt-image-view-model,
+html[data-ytb-reveal-hover="true"][data-ytb-related="thumbnail"][data-ytb-page="watch"]
+	ytd-watch-next-secondary-results-renderer
+	ytd-compact-video-renderer
+	yt-thumbnail-view-model:hover
+	yt-animated-image-view-model,
+html[data-ytb-reveal-hover="true"][data-ytb-related="thumbnail"][data-ytb-page="watch"]
+	ytd-watch-next-secondary-results-renderer
+	ytd-compact-video-renderer
+	yt-thumbnail-overlay-view-model:hover,
+html[data-ytb-reveal-hover="true"][data-ytb-related="thumbnail"][data-ytb-page="watch"]
+	ytd-watch-next-secondary-results-renderer
+	ytd-compact-video-renderer:hover
+	ytd-moving-thumbnail-renderer,
+html[data-ytb-reveal-hover="true"][data-ytb-related="thumbnail"][data-ytb-page="watch"]
+	ytd-watch-next-secondary-results-renderer
+	ytd-compact-video-renderer:hover
+	ytd-video-preview,
+html[data-ytb-reveal-hover="true"][data-ytb-related="thumbnail"][data-ytb-page="watch"]
+	ytd-watch-next-secondary-results-renderer
+	ytd-compact-video-renderer:hover
+	video,
+html[data-ytb-reveal-hover="true"][data-ytb-related="thumbnail"][data-ytb-page="watch"]
+	#related
+	ytd-compact-video-renderer
+	ytd-thumbnail:hover
+	yt-image,
+html[data-ytb-reveal-hover="true"][data-ytb-related="thumbnail"][data-ytb-page="watch"]
+	#related
+	ytd-compact-video-renderer
+	ytd-thumbnail:hover
+	img,
+html[data-ytb-reveal-hover="true"][data-ytb-related="thumbnail"][data-ytb-page="watch"]
+	#related
+	ytd-compact-video-renderer
+	ytd-thumbnail:hover
+	#overlays,
+html[data-ytb-reveal-hover="true"][data-ytb-related="thumbnail"][data-ytb-page="watch"]
+	#related
+	ytd-compact-video-renderer
+	yt-thumbnail-view-model:hover
+	img,
+html[data-ytb-reveal-hover="true"][data-ytb-related="thumbnail"][data-ytb-page="watch"]
+	#related
+	ytd-compact-video-renderer
+	yt-thumbnail-view-model:hover
+	yt-image,
+html[data-ytb-reveal-hover="true"][data-ytb-related="thumbnail"][data-ytb-page="watch"]
+	#related
+	ytd-compact-video-renderer
+	yt-thumbnail-view-model:hover
+	yt-image-view-model,
+html[data-ytb-reveal-hover="true"][data-ytb-related="thumbnail"][data-ytb-page="watch"]
+	#related
+	ytd-compact-video-renderer
+	yt-thumbnail-view-model:hover
+	yt-animated-image-view-model,
+html[data-ytb-reveal-hover="true"][data-ytb-related="thumbnail"][data-ytb-page="watch"]
+	#related
+	ytd-compact-video-renderer
+	yt-thumbnail-overlay-view-model:hover,
+html[data-ytb-reveal-hover="true"][data-ytb-related="thumbnail"][data-ytb-page="watch"]
+	#related
+	ytd-compact-video-renderer:hover
+	ytd-moving-thumbnail-renderer,
+html[data-ytb-reveal-hover="true"][data-ytb-related="thumbnail"][data-ytb-page="watch"]
+	#related
+	ytd-compact-video-renderer:hover
+	ytd-video-preview,
+html[data-ytb-reveal-hover="true"][data-ytb-related="thumbnail"][data-ytb-page="watch"]
+	#related
+	ytd-compact-video-renderer:hover
+	video,
+html[data-ytb-reveal-hover="true"][data-ytb-related="thumbnail"][data-ytb-page="watch"]
+	#related
+	yt-lockup-view-model
+	yt-thumbnail-view-model:hover
+	img {
+	opacity: 1;
+}
+
+/* Mode: Full Card */
+html[data-ytb-related="card"][data-ytb-page="watch"]
+	ytd-watch-next-secondary-results-renderer
+	ytd-compact-video-renderer
+	yt-lockup-view-model,
+html[data-ytb-related="card"][data-ytb-page="watch"]
+	ytd-watch-next-secondary-results-renderer
+	ytd-compact-video-renderer
+	#dismissible,
+html[data-ytb-related="card"][data-ytb-page="watch"]
+	ytd-watch-next-secondary-results-renderer
+	ytd-compact-radio-renderer
+	#dismissible,
+html[data-ytb-related="card"][data-ytb-page="watch"]
+	ytd-watch-next-secondary-results-renderer
+	ytd-compact-playlist-renderer
+	#content,
+html[data-ytb-related="card"][data-ytb-page="watch"]
+	#related
+	yt-lockup-view-model,
+html[data-ytb-related="card"][data-ytb-page="watch"]
+	#related
+	ytd-compact-video-renderer
+	#dismissible,
+html[data-ytb-related="card"][data-ytb-page="watch"]
+	#related
+	ytd-compact-radio-renderer
+	#dismissible,
+html[data-ytb-related="card"][data-ytb-page="watch"]
+	#related
+	ytd-compact-playlist-renderer
+	#content,
+html[data-ytb-related="card"][data-ytb-page="watch"]
+	#related
+	ytd-reel-shelf-renderer
+	#dismissible {
+	background-color: var(--ytb-placeholder-card-bg);
+	border-radius: 8px;
+	pointer-events: none;
+	user-select: none;
+	position: relative;
+}
+
+html[data-ytb-related="card"][data-ytb-page="watch"]
+	ytd-watch-next-secondary-results-renderer
+	ytd-compact-video-renderer
+	yt-lockup-view-model
+	> *,
+html[data-ytb-related="card"][data-ytb-page="watch"]
+	ytd-watch-next-secondary-results-renderer
+	ytd-compact-video-renderer
+	#dismissible
+	> *,
+html[data-ytb-related="card"][data-ytb-page="watch"]
+	ytd-watch-next-secondary-results-renderer
+	ytd-compact-radio-renderer
+	#dismissible
+	> *,
+html[data-ytb-related="card"][data-ytb-page="watch"]
+	ytd-watch-next-secondary-results-renderer
+	ytd-compact-playlist-renderer
+	#content
+	> *,
+html[data-ytb-related="card"][data-ytb-page="watch"]
+	#related
+	yt-lockup-view-model
+	> *,
+html[data-ytb-related="card"][data-ytb-page="watch"]
+	#related
+	ytd-compact-video-renderer
+	#dismissible
+	> *,
+html[data-ytb-related="card"][data-ytb-page="watch"]
+	#related
+	ytd-compact-radio-renderer
+	#dismissible
+	> *,
+html[data-ytb-related="card"][data-ytb-page="watch"]
+	#related
+	ytd-compact-playlist-renderer
+	#content
+	> *,
+html[data-ytb-related="card"][data-ytb-page="watch"]
+	#related
+	ytd-reel-shelf-renderer
+	#dismissible
+	> * {
+	opacity: 0;
+	pointer-events: none;
+}
+
+/* ==========================================================================
+   4. COMMENTS (data-ytb-comments)
+   ========================================================================== */
+
+/* Mode: Thumbnail (Avatars) */
+html[data-ytb-comments="thumbnail"][data-ytb-page="watch"]
+	ytd-comments
+	#contents
+	ytd-comment-thread-renderer
+	#author-thumbnail,
+html[data-ytb-comments="thumbnail"][data-ytb-page="watch"]
+	ytd-comments
+	#contents
+	ytd-comment-view-model
+	#author-thumbnail,
+html[data-ytb-comments="thumbnail"][data-ytb-page="watch"]
+	ytd-comments
+	#contents
+	ytd-comment-renderer
+	#author-thumbnail,
+html[data-ytb-comments="thumbnail"][data-ytb-page="watch"]
+	ytd-comments
+	#contents
+	yt-img-shadow#author-thumbnail,
+html[data-ytb-comments="thumbnail"][data-ytb-page="watch"]
+	ytd-comments
+	#contents
+	yt-decorated-avatar-view-model {
+	background-color: var(--ytb-placeholder-bg);
+	border-radius: 50%;
+	position: relative;
+	overflow: hidden;
+}
+
+html[data-ytb-comments="thumbnail"][data-ytb-page="watch"]
+	ytd-comments
+	#contents
+	ytd-comment-thread-renderer
+	#author-thumbnail
+	img,
+html[data-ytb-comments="thumbnail"][data-ytb-page="watch"]
+	ytd-comments
+	#contents
+	ytd-comment-view-model
+	#author-thumbnail
+	img,
+html[data-ytb-comments="thumbnail"][data-ytb-page="watch"]
+	ytd-comments
+	#contents
+	ytd-comment-renderer
+	#author-thumbnail
+	img,
+html[data-ytb-comments="thumbnail"][data-ytb-page="watch"]
+	ytd-comments
+	#contents
+	yt-img-shadow#author-thumbnail
+	img,
+html[data-ytb-comments="thumbnail"][data-ytb-page="watch"]
+	ytd-comments
+	#contents
+	yt-decorated-avatar-view-model
+	img {
+	opacity: 0;
+}
+
+/* Mode: Thumbnail (Reveal on Hover when enabled) */
+html[data-ytb-reveal-hover="true"][data-ytb-comments="thumbnail"][data-ytb-page="watch"]
+	ytd-comments
+	#contents
+	ytd-comment-thread-renderer
+	#author-thumbnail:hover
+	img,
+html[data-ytb-reveal-hover="true"][data-ytb-comments="thumbnail"][data-ytb-page="watch"]
+	ytd-comments
+	#contents
+	ytd-comment-view-model
+	#author-thumbnail:hover
+	img,
+html[data-ytb-reveal-hover="true"][data-ytb-comments="thumbnail"][data-ytb-page="watch"]
+	ytd-comments
+	#contents
+	ytd-comment-renderer
+	#author-thumbnail:hover
+	img,
+html[data-ytb-reveal-hover="true"][data-ytb-comments="thumbnail"][data-ytb-page="watch"]
+	ytd-comments
+	#contents
+	yt-img-shadow#author-thumbnail:hover
+	img,
+html[data-ytb-reveal-hover="true"][data-ytb-comments="thumbnail"][data-ytb-page="watch"]
+	ytd-comments
+	#contents
+	yt-decorated-avatar-view-model:hover
+	img {
+	opacity: 1;
+}
+
+/* Mode: Full Card */
+html[data-ytb-comments="card"][data-ytb-page="watch"]
+	ytd-comments
+	#contents
+	ytd-comment-thread-renderer,
+html[data-ytb-comments="card"][data-ytb-page="watch"]
+	ytd-comments
+	#contents
+	ytd-comment-view-model,
+html[data-ytb-comments="card"][data-ytb-page="watch"]
+	ytd-comments
+	#contents
+	ytd-comment-renderer {
+	background-color: var(--ytb-placeholder-card-bg);
+	border-radius: 8px;
+	padding: 12px;
+	margin-bottom: 12px;
+	pointer-events: none;
+	user-select: none;
+	position: relative;
+}
+
+html[data-ytb-comments="card"][data-ytb-page="watch"]
+	ytd-comments
+	#contents
+	ytd-comment-thread-renderer
+	> *,
+html[data-ytb-comments="card"][data-ytb-page="watch"]
+	ytd-comments
+	#contents
+	ytd-comment-view-model
+	> *,
+html[data-ytb-comments="card"][data-ytb-page="watch"]
+	ytd-comments
+	#contents
+	ytd-comment-renderer
+	> * {
+	opacity: 0;
+	pointer-events: none;
+}

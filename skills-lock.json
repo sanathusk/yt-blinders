@@ -1,0 +1,11 @@
+{
+	"version": 1,
+	"skills": {
+		"brainstorm": {
+			"source": "sanathusk/skills",
+			"sourceType": "github",
+			"skillPath": "brainstorm/SKILL.md",
+			"computedHash": "df1ee8c59d4284f3b635cb16b380dbf5ddd91d77fd39e07f87f4bb80bb9e5685"
+		}
+	}
+}

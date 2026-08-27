@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YT Blinders</title>
+  <link rel="stylesheet" href="./popup.css">
+</head>
+<body>
+  <div class="popup-container">
+    <header class="header">
+      <div class="logo-group">
+        <div class="logo-icon">
+          <div class="slat"></div>
+          <div class="slat accent"></div>
+          <div class="slat"></div>
+        </div>
+        <div class="title-group">
+          <h1>YT Blinders</h1>
+          <p class="subtitle">Focus & visual declutter</p>
+        </div>
+      </div>
+    </header>
+
+    <main class="surfaces-list">
+      <!-- 1. Home Feed -->
+      <section class="surface-card">
+        <div class="surface-header">
+          <span class="surface-name">Home Feed</span>
+          <span class="surface-scope">/</span>
+        </div>
+        <div class="segmented-control" role="radiogroup" aria-label="Home Feed Mode">
+          <label class="segment-option">
+            <input type="radio" name="homeFeed" value="none">
+            <span class="segment-label">Off</span>
+          </label>
+          <label class="segment-option">
+            <input type="radio" name="homeFeed" value="thumbnail">
+            <span class="segment-label">Thumbnails</span>
+          </label>
+          <label class="segment-option">
+            <input type="radio" name="homeFeed" value="card">
+            <span class="segment-label">Full Cards</span>
+          </label>
+        </div>
+      </section>
+
+      <!-- 2. Search Results -->
+      <section class="surface-card">
+        <div class="surface-header">
+          <span class="surface-name">Search Results</span>
+          <span class="surface-scope">/results</span>
+        </div>
+        <div class="segmented-control" role="radiogroup" aria-label="Search Results Mode">
+          <label class="segment-option">
+            <input type="radio" name="searchResults" value="none">
+            <span class="segment-label">Off</span>
+          </label>
+          <label class="segment-option">
+            <input type="radio" name="searchResults" value="thumbnail">
+            <span class="segment-label">Thumbnails</span>
+          </label>
+          <label class="segment-option">
+            <input type="radio" name="searchResults" value="card">
+            <span class="segment-label">Full Cards</span>
+          </label>
+        </div>
+      </section>
+
+      <!-- 3. Related Videos -->
+      <section class="surface-card">
+        <div class="surface-header">
+          <span class="surface-name">Related Videos</span>
+          <span class="surface-scope">/watch</span>
+        </div>
+        <div class="segmented-control" role="radiogroup" aria-label="Related Videos Mode">
+          <label class="segment-option">
+            <input type="radio" name="relatedVideos" value="none">
+            <span class="segment-label">Off</span>
+          </label>
+          <label class="segment-option">
+            <input type="radio" name="relatedVideos" value="thumbnail">
+            <span class="segment-label">Thumbnails</span>
+          </label>
+          <label class="segment-option">
+            <input type="radio" name="relatedVideos" value="card">
+            <span class="segment-label">Full Cards</span>
+          </label>
+        </div>
+      </section>
+
+      <!-- 4. Comments -->
+      <section class="surface-card">
+        <div class="surface-header">
+          <span class="surface-name">Comments</span>
+          <span class="surface-scope">/watch</span>
+        </div>
+        <div class="segmented-control" role="radiogroup" aria-label="Comments Mode">
+          <label class="segment-option">
+            <input type="radio" name="comments" value="none">
+            <span class="segment-label">Off</span>
+          </label>
+          <label class="segment-option">
+            <input type="radio" name="comments" value="thumbnail">
+            <span class="segment-label">Avatars</span>
+          </label>
+          <label class="segment-option">
+            <input type="radio" name="comments" value="card">
+            <span class="segment-label">Full Comments</span>
+          </label>
+        </div>
+      </section>
+
+      <!-- 5. Hover Behavior -->
+      <section class="surface-card toggle-card">
+        <div class="toggle-container">
+          <div class="toggle-info">
+            <span class="surface-name">Reveal on hover</span>
+            <span class="toggle-description">Show thumbnail on mouse hover</span>
+          </div>
+          <label class="switch" aria-label="Reveal on hover">
+            <input type="checkbox" id="revealOnHover" name="revealOnHover">
+            <span class="slider"></span>
+          </label>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span class="sync-status" id="syncStatus">Settings synced</span>
+    </footer>
+  </div>
+
+  <script type="module" src="./popup.ts"></script>
+</body>
+</html>

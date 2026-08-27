@@ -1,0 +1,30 @@
+{
+	"manifest_version": 3,
+	"name": "YT Blinders - Thumbnail & Card Grey-Out",
+	"version": "1.0.0",
+	"description": "Reduces visual temptation and dopamine triggers on YouTube by greying out thumbnails or entire video and comment cards.",
+	"icons": {
+		"16": "icons/icon-16.png",
+		"48": "icons/icon-48.png",
+		"128": "icons/icon-128.png"
+	},
+	"action": {
+		"default_popup": "src/popup/popup.html",
+		"default_title": "YT Blinders Settings",
+		"default_icon": {
+			"16": "icons/icon-16.png",
+			"48": "icons/icon-48.png",
+			"128": "icons/icon-128.png"
+		}
+	},
+	"permissions": ["storage"],
+	"host_permissions": ["*://*.youtube.com/*"],
+	"content_scripts": [
+		{
+			"matches": ["*://*.youtube.com/*"],
+			"css": ["content/content.css"],
+			"js": ["content/content.js"],
+			"run_at": "document_start"
+		}
+	]
+}
