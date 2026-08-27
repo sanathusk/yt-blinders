@@ -69,6 +69,10 @@ assert(
 	fs.existsSync(path.join(distDir, "popup/popup.css")),
 	"Popup CSS exists at dist/popup/popup.css",
 );
+assert(
+	!fs.existsSync(path.join(distDir, "src")),
+	"No redundant dist/src folder exists",
+);
 
 // 4. Check Content Scripts in dist/
 assert(

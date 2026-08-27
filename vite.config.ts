@@ -44,6 +44,22 @@ export default defineConfig({
 			],
 		}),
 		{
+			name: "relocate-popup-html",
+			enforce: "post",
+			generateBundle(_, bundle) {
+				const htmlAsset = bundle["src/popup/popup.html"];
+				if (htmlAsset && "source" in htmlAsset) {
+					htmlAsset.fileName = "popup/popup.html";
+					if (typeof htmlAsset.source === "string") {
+						htmlAsset.source = htmlAsset.source.replaceAll(
+							"../../popup/",
+							"./",
+						);
+					}
+				}
+			},
+		},
+		{
 			name: "build-content-script",
 			async closeBundle() {
 				// Bundle content script as a self-contained IIFE with zero external imports

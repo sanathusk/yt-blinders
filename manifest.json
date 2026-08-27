@@ -9,7 +9,7 @@
 		"128": "icons/icon-128.png"
 	},
 	"action": {
-		"default_popup": "src/popup/popup.html",
+		"default_popup": "popup/popup.html",
 		"default_title": "YT Blinders Settings",
 		"default_icon": {
 			"16": "icons/icon-16.png",
