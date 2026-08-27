@@ -284,17 +284,77 @@ body {
 /* Footer */
 .footer {
 	display: flex;
-	justify-content: center;
-	align-items: center;
+	flex-direction: column;
+	gap: 8px;
 	padding-top: 4px;
 }
 
+.save-button {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 7px;
+	width: 100%;
+	padding: 9px 14px;
+	background-color: var(--accent-primary);
+	color: #ffffff;
+	border: none;
+	border-radius: 6px;
+	font-family: inherit;
+	font-size: 13px;
+	font-weight: 600;
+	cursor: pointer;
+	box-shadow: var(--shadow-sm);
+	transition:
+		background-color 0.15s ease,
+		transform 0.1s ease,
+		box-shadow 0.15s ease,
+		opacity 0.15s ease;
+}
+
+.save-button:hover:not(:disabled) {
+	background-color: var(--accent-hover);
+	box-shadow: var(--shadow-md);
+}
+
+.save-button:active:not(:disabled) {
+	transform: scale(0.98);
+}
+
+.save-button:focus-visible {
+	outline: 2px solid var(--accent-primary);
+	outline-offset: 2px;
+}
+
+.save-button:disabled {
+	opacity: 0.7;
+	cursor: default;
+}
+
+.save-button.saved {
+	background-color: #10b981;
+}
+
+.save-icon {
+	flex-shrink: 0;
+}
+
 .sync-status {
-	font-size: 10px;
+	font-size: 11px;
+	text-align: center;
 	color: var(--text-muted);
+	min-height: 16px;
 	transition: color 0.2s ease;
 }
 
 .sync-status.saved {
 	color: var(--accent-primary);
+}
+
+.sync-status.unsaved {
+	color: #f59e0b;
+}
+
+.sync-status.error {
+	color: #ef4444;
 }
