@@ -53,9 +53,14 @@ async function initPopup(): Promise<void> {
 
 		surfaces.forEach((surface) => {
 			const value = config[surface] || "none";
-			const radio = document.querySelector<HTMLInputElement>(
+			let radio = document.querySelector<HTMLInputElement>(
 				`input[name="${surface}"][value="${value}"]`,
 			);
+			if (!radio) {
+				radio = document.querySelector<HTMLInputElement>(
+					`input[name="${surface}"][value="none"]`,
+				);
+			}
 			if (radio) {
 				radio.checked = true;
 			}

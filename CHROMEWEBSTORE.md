@@ -31,12 +31,12 @@ Traditional blockers collapse video elements, causing jarring layout shifts, inf
   - 🏠 **Home Feed (`/`):** Control recommendations on the main page.
   - 🔍 **Search Results (`/results`):** Browse queries without clickbait distractions.
   - 🎬 **Related Videos (`/watch` sidebar):** Stop endless rabbit-hole clicking while watching a video.
-  - 💬 **Comments Section (`/watch` comments):** Hide distracting avatars or blank out full comment threads.
+  - 💬 **Comments Section (`/watch` comments):** Keep normal comments or grey out entire comment threads.
 
-- **3 Granular Modes Per Surface:**
+- **Granular Modes Per Surface:**
   - **Off:** Normal YouTube display.
-  - **Grey Thumbnails:** Masks video thumbnails and channel avatars into neutral grey boxes while leaving video titles and channel names readable.
-  - **Grey Full Cards:** Blanks out the entire card (thumbnail, title, metadata) into a neutral placeholder box and completely disables pointer clicks/hover previews.
+  - **Grey Thumbnails:** Masks video thumbnails and channel avatars into neutral grey boxes while leaving video titles and channel names readable (for Home Feed, Search Results, and Related Videos).
+  - **Grey Full Cards / Comments:** Blanks out the entire card or comment thread into a neutral placeholder box and disables pointer clicks/hover previews.
 
 - **Seamless Dark & Light Theme Matching:**
   - Placeholders automatically adapt to YouTube's native dark and light modes.

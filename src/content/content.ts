@@ -107,5 +107,33 @@ if (document.body) {
 	});
 }
 
+// Prevent background/inline video previews from playing when revealOnHover is false
+document.addEventListener(
+	"play",
+	(event) => {
+		const target = event.target as HTMLMediaElement;
+		if (target?.tagName !== "VIDEO") return;
+
+		// Check if target is inside an inline preview / hover player
+		const isInlinePreview = target.closest(
+			"ytd-inline-preview-renderer, ytd-video-preview, #inline-preview-player, #video-preview, #mouseover-overlay, ytd-moving-thumbnail-renderer",
+		);
+
+		if (isInlinePreview) {
+			const pageType = detectPageType();
+			const isGreyed =
+				(pageType === "home" && currentConfig.homeFeed !== "none") ||
+				(pageType === "search" && currentConfig.searchResults !== "none") ||
+				(pageType === "watch" && currentConfig.relatedVideos !== "none");
+
+			if (isGreyed && !currentConfig.revealOnHover) {
+				target.pause();
+				target.currentTime = 0;
+			}
+		}
+	},
+	true,
+);
+
 // Initialize immediately
 loadConfig();

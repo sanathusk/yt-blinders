@@ -106,10 +106,22 @@ html[data-ytb-home="thumbnail"][data-ytb-page="home"]
 	ytd-moving-thumbnail-renderer,
 html[data-ytb-home="thumbnail"][data-ytb-page="home"]
 	ytd-rich-item-renderer
+	ytd-thumbnail-overlay-loading-preview-renderer,
+html[data-ytb-home="thumbnail"][data-ytb-page="home"]
+	ytd-rich-item-renderer
+	ytd-thumbnail-overlay-inline-unplayable-renderer,
+html[data-ytb-home="thumbnail"][data-ytb-page="home"]
+	ytd-rich-item-renderer
+	ytd-inline-preview-renderer,
+html[data-ytb-home="thumbnail"][data-ytb-page="home"]
+	ytd-rich-item-renderer
 	ytd-video-preview,
 html[data-ytb-home="thumbnail"][data-ytb-page="home"]
 	ytd-rich-item-renderer
 	#inline-preview-player,
+html[data-ytb-home="thumbnail"][data-ytb-page="home"]
+	ytd-rich-item-renderer
+	#video-preview,
 html[data-ytb-home="thumbnail"][data-ytb-page="home"]
 	ytd-rich-item-renderer
 	#preview,
@@ -136,7 +148,22 @@ html[data-ytb-home="thumbnail"][data-ytb-page="home"]
 html[data-ytb-home="thumbnail"][data-ytb-page="home"]
 	ytd-reel-item-renderer
 	yt-thumbnail-view-model
-	img {
+	img,
+html[data-ytb-home="thumbnail"][data-ytb-page="home"]
+	ytd-rich-grid-media
+	ytd-inline-preview-renderer,
+html[data-ytb-home="thumbnail"][data-ytb-page="home"]
+	ytd-rich-grid-slim-media
+	ytd-inline-preview-renderer,
+html[data-ytb-home="thumbnail"][data-ytb-page="home"]
+	ytd-rich-shelf-renderer
+	ytd-inline-preview-renderer,
+html[data-ytb-home="thumbnail"][data-ytb-page="home"]
+	ytd-reel-item-renderer
+	ytd-inline-preview-renderer,
+html[data-ytb-home="thumbnail"][data-ytb-page="home"]
+	yt-lockup-view-model
+	ytd-inline-preview-renderer {
 	opacity: 0;
 }
 
@@ -361,16 +388,28 @@ html[data-ytb-search="thumbnail"][data-ytb-page="search"]
 html[data-ytb-search="thumbnail"][data-ytb-page="search"]
 	ytd-video-renderer
 	yt-thumbnail-view-model
-	yt-thumbnail-overlay-view-model,
+	ytd-thumbnail-overlay-view-model,
 html[data-ytb-search="thumbnail"][data-ytb-page="search"]
 	ytd-video-renderer
 	ytd-moving-thumbnail-renderer,
+html[data-ytb-search="thumbnail"][data-ytb-page="search"]
+	ytd-video-renderer
+	ytd-thumbnail-overlay-loading-preview-renderer,
+html[data-ytb-search="thumbnail"][data-ytb-page="search"]
+	ytd-video-renderer
+	ytd-thumbnail-overlay-inline-unplayable-renderer,
+html[data-ytb-search="thumbnail"][data-ytb-page="search"]
+	ytd-video-renderer
+	ytd-inline-preview-renderer,
 html[data-ytb-search="thumbnail"][data-ytb-page="search"]
 	ytd-video-renderer
 	ytd-video-preview,
 html[data-ytb-search="thumbnail"][data-ytb-page="search"]
 	ytd-video-renderer
 	#inline-preview-player,
+html[data-ytb-search="thumbnail"][data-ytb-page="search"]
+	ytd-video-renderer
+	#video-preview,
 html[data-ytb-search="thumbnail"][data-ytb-page="search"]
 	ytd-video-renderer
 	#preview,
@@ -421,7 +460,22 @@ html[data-ytb-search="thumbnail"][data-ytb-page="search"]
 html[data-ytb-search="thumbnail"][data-ytb-page="search"]
 	ytd-reel-item-renderer
 	yt-thumbnail-view-model
-	img {
+	img,
+html[data-ytb-search="thumbnail"][data-ytb-page="search"]
+	ytd-radio-renderer
+	ytd-inline-preview-renderer,
+html[data-ytb-search="thumbnail"][data-ytb-page="search"]
+	ytd-playlist-renderer
+	ytd-inline-preview-renderer,
+html[data-ytb-search="thumbnail"][data-ytb-page="search"]
+	ytd-shelf-renderer
+	ytd-inline-preview-renderer,
+html[data-ytb-search="thumbnail"][data-ytb-page="search"]
+	ytd-reel-shelf-renderer
+	ytd-inline-preview-renderer,
+html[data-ytb-search="thumbnail"][data-ytb-page="search"]
+	yt-lockup-view-model
+	ytd-inline-preview-renderer {
 	opacity: 0;
 }
 
@@ -694,7 +748,27 @@ html[data-ytb-related="thumbnail"][data-ytb-page="watch"]
 html[data-ytb-related="thumbnail"][data-ytb-page="watch"]
 	ytd-watch-next-secondary-results-renderer
 	ytd-compact-video-renderer
+	ytd-thumbnail-overlay-loading-preview-renderer,
+html[data-ytb-related="thumbnail"][data-ytb-page="watch"]
+	ytd-watch-next-secondary-results-renderer
+	ytd-compact-video-renderer
+	ytd-thumbnail-overlay-inline-unplayable-renderer,
+html[data-ytb-related="thumbnail"][data-ytb-page="watch"]
+	ytd-watch-next-secondary-results-renderer
+	ytd-compact-video-renderer
+	ytd-inline-preview-renderer,
+html[data-ytb-related="thumbnail"][data-ytb-page="watch"]
+	ytd-watch-next-secondary-results-renderer
+	ytd-compact-video-renderer
 	ytd-video-preview,
+html[data-ytb-related="thumbnail"][data-ytb-page="watch"]
+	ytd-watch-next-secondary-results-renderer
+	ytd-compact-video-renderer
+	#inline-preview-player,
+html[data-ytb-related="thumbnail"][data-ytb-page="watch"]
+	ytd-watch-next-secondary-results-renderer
+	ytd-compact-video-renderer
+	#video-preview,
 html[data-ytb-related="thumbnail"][data-ytb-page="watch"]
 	ytd-watch-next-secondary-results-renderer
 	ytd-compact-video-renderer
@@ -745,7 +819,27 @@ html[data-ytb-related="thumbnail"][data-ytb-page="watch"]
 html[data-ytb-related="thumbnail"][data-ytb-page="watch"]
 	#related
 	ytd-compact-video-renderer
+	ytd-thumbnail-overlay-loading-preview-renderer,
+html[data-ytb-related="thumbnail"][data-ytb-page="watch"]
+	#related
+	ytd-compact-video-renderer
+	ytd-thumbnail-overlay-inline-unplayable-renderer,
+html[data-ytb-related="thumbnail"][data-ytb-page="watch"]
+	#related
+	ytd-compact-video-renderer
+	ytd-inline-preview-renderer,
+html[data-ytb-related="thumbnail"][data-ytb-page="watch"]
+	#related
+	ytd-compact-video-renderer
 	ytd-video-preview,
+html[data-ytb-related="thumbnail"][data-ytb-page="watch"]
+	#related
+	ytd-compact-video-renderer
+	#inline-preview-player,
+html[data-ytb-related="thumbnail"][data-ytb-page="watch"]
+	#related
+	ytd-compact-video-renderer
+	#video-preview,
 html[data-ytb-related="thumbnail"][data-ytb-page="watch"]
 	#related
 	ytd-compact-video-renderer
@@ -754,7 +848,11 @@ html[data-ytb-related="thumbnail"][data-ytb-page="watch"]
 	#related
 	yt-lockup-view-model
 	yt-thumbnail-view-model
-	img {
+	img,
+html[data-ytb-related="thumbnail"][data-ytb-page="watch"]
+	#related
+	yt-lockup-view-model
+	ytd-inline-preview-renderer {
 	opacity: 0;
 }
 
@@ -964,100 +1062,7 @@ html[data-ytb-related="card"][data-ytb-page="watch"]
    4. COMMENTS (data-ytb-comments)
    ========================================================================== */
 
-/* Mode: Thumbnail (Avatars) */
-html[data-ytb-comments="thumbnail"][data-ytb-page="watch"]
-	ytd-comments
-	#contents
-	ytd-comment-thread-renderer
-	#author-thumbnail,
-html[data-ytb-comments="thumbnail"][data-ytb-page="watch"]
-	ytd-comments
-	#contents
-	ytd-comment-view-model
-	#author-thumbnail,
-html[data-ytb-comments="thumbnail"][data-ytb-page="watch"]
-	ytd-comments
-	#contents
-	ytd-comment-renderer
-	#author-thumbnail,
-html[data-ytb-comments="thumbnail"][data-ytb-page="watch"]
-	ytd-comments
-	#contents
-	yt-img-shadow#author-thumbnail,
-html[data-ytb-comments="thumbnail"][data-ytb-page="watch"]
-	ytd-comments
-	#contents
-	yt-decorated-avatar-view-model {
-	background-color: var(--ytb-placeholder-bg);
-	border-radius: 50%;
-	position: relative;
-	overflow: hidden;
-}
-
-html[data-ytb-comments="thumbnail"][data-ytb-page="watch"]
-	ytd-comments
-	#contents
-	ytd-comment-thread-renderer
-	#author-thumbnail
-	img,
-html[data-ytb-comments="thumbnail"][data-ytb-page="watch"]
-	ytd-comments
-	#contents
-	ytd-comment-view-model
-	#author-thumbnail
-	img,
-html[data-ytb-comments="thumbnail"][data-ytb-page="watch"]
-	ytd-comments
-	#contents
-	ytd-comment-renderer
-	#author-thumbnail
-	img,
-html[data-ytb-comments="thumbnail"][data-ytb-page="watch"]
-	ytd-comments
-	#contents
-	yt-img-shadow#author-thumbnail
-	img,
-html[data-ytb-comments="thumbnail"][data-ytb-page="watch"]
-	ytd-comments
-	#contents
-	yt-decorated-avatar-view-model
-	img {
-	opacity: 0;
-}
-
-/* Mode: Thumbnail (Reveal on Hover when enabled) */
-html[data-ytb-reveal-hover="true"][data-ytb-comments="thumbnail"][data-ytb-page="watch"]
-	ytd-comments
-	#contents
-	ytd-comment-thread-renderer
-	#author-thumbnail:hover
-	img,
-html[data-ytb-reveal-hover="true"][data-ytb-comments="thumbnail"][data-ytb-page="watch"]
-	ytd-comments
-	#contents
-	ytd-comment-view-model
-	#author-thumbnail:hover
-	img,
-html[data-ytb-reveal-hover="true"][data-ytb-comments="thumbnail"][data-ytb-page="watch"]
-	ytd-comments
-	#contents
-	ytd-comment-renderer
-	#author-thumbnail:hover
-	img,
-html[data-ytb-reveal-hover="true"][data-ytb-comments="thumbnail"][data-ytb-page="watch"]
-	ytd-comments
-	#contents
-	yt-img-shadow#author-thumbnail:hover
-	img,
-html[data-ytb-reveal-hover="true"][data-ytb-comments="thumbnail"][data-ytb-page="watch"]
-	ytd-comments
-	#contents
-	yt-decorated-avatar-view-model:hover
-	img {
-	opacity: 1;
-}
-
-/* Mode: Full Card */
+/* Mode: Full Card / Comments */
 html[data-ytb-comments="card"][data-ytb-page="watch"]
 	ytd-comments
 	#contents
@@ -1096,4 +1101,130 @@ html[data-ytb-comments="card"][data-ytb-page="watch"]
 	> * {
 	opacity: 0;
 	pointer-events: none;
+}
+
+/* ==========================================================================
+   5. VIDEO PREVIEW & HOVER SUPPRESSION (when revealOnHover is false)
+   ========================================================================== */
+
+/* Type selectors (Specificity: 0, 3, 2) */
+html[data-ytb-reveal-hover="false"][data-ytb-home="thumbnail"][data-ytb-page="home"]
+ytd-inline-preview-renderer,
+html[data-ytb-reveal-hover="false"][data-ytb-home="thumbnail"][data-ytb-page="home"]
+	ytd-video-preview,
+html[data-ytb-reveal-hover="false"][data-ytb-home="thumbnail"][data-ytb-page="home"]
+	ytd-moving-thumbnail-renderer,
+html[data-ytb-reveal-hover="false"][data-ytb-home="thumbnail"][data-ytb-page="home"]
+	ytd-thumbnail-overlay-loading-preview-renderer,
+html[data-ytb-reveal-hover="false"][data-ytb-home="thumbnail"][data-ytb-page="home"]
+	ytd-thumbnail-overlay-inline-unplayable-renderer,
+html[data-ytb-reveal-hover="false"][data-ytb-home="card"][data-ytb-page="home"]
+	ytd-inline-preview-renderer,
+html[data-ytb-reveal-hover="false"][data-ytb-home="card"][data-ytb-page="home"]
+	ytd-video-preview,
+html[data-ytb-reveal-hover="false"][data-ytb-home="card"][data-ytb-page="home"]
+	ytd-moving-thumbnail-renderer,
+html[data-ytb-reveal-hover="false"][data-ytb-home="card"][data-ytb-page="home"]
+	ytd-thumbnail-overlay-loading-preview-renderer,
+html[data-ytb-reveal-hover="false"][data-ytb-home="card"][data-ytb-page="home"]
+	ytd-thumbnail-overlay-inline-unplayable-renderer,
+html[data-ytb-reveal-hover="false"][data-ytb-search="thumbnail"][data-ytb-page="search"]
+	ytd-inline-preview-renderer,
+html[data-ytb-reveal-hover="false"][data-ytb-search="thumbnail"][data-ytb-page="search"]
+	ytd-video-preview,
+html[data-ytb-reveal-hover="false"][data-ytb-search="thumbnail"][data-ytb-page="search"]
+	ytd-moving-thumbnail-renderer,
+html[data-ytb-reveal-hover="false"][data-ytb-search="thumbnail"][data-ytb-page="search"]
+	ytd-thumbnail-overlay-loading-preview-renderer,
+html[data-ytb-reveal-hover="false"][data-ytb-search="thumbnail"][data-ytb-page="search"]
+	ytd-thumbnail-overlay-inline-unplayable-renderer,
+html[data-ytb-reveal-hover="false"][data-ytb-search="card"][data-ytb-page="search"]
+	ytd-inline-preview-renderer,
+html[data-ytb-reveal-hover="false"][data-ytb-search="card"][data-ytb-page="search"]
+	ytd-video-preview,
+html[data-ytb-reveal-hover="false"][data-ytb-search="card"][data-ytb-page="search"]
+	ytd-moving-thumbnail-renderer,
+html[data-ytb-reveal-hover="false"][data-ytb-search="card"][data-ytb-page="search"]
+	ytd-thumbnail-overlay-loading-preview-renderer,
+html[data-ytb-reveal-hover="false"][data-ytb-search="card"][data-ytb-page="search"]
+	ytd-thumbnail-overlay-inline-unplayable-renderer,
+html[data-ytb-reveal-hover="false"][data-ytb-related="thumbnail"][data-ytb-page="watch"]
+	ytd-inline-preview-renderer,
+html[data-ytb-reveal-hover="false"][data-ytb-related="thumbnail"][data-ytb-page="watch"]
+	ytd-video-preview,
+html[data-ytb-reveal-hover="false"][data-ytb-related="thumbnail"][data-ytb-page="watch"]
+	ytd-moving-thumbnail-renderer,
+html[data-ytb-reveal-hover="false"][data-ytb-related="thumbnail"][data-ytb-page="watch"]
+	ytd-thumbnail-overlay-loading-preview-renderer,
+html[data-ytb-reveal-hover="false"][data-ytb-related="thumbnail"][data-ytb-page="watch"]
+	ytd-thumbnail-overlay-inline-unplayable-renderer,
+html[data-ytb-reveal-hover="false"][data-ytb-related="card"][data-ytb-page="watch"]
+	ytd-inline-preview-renderer,
+html[data-ytb-reveal-hover="false"][data-ytb-related="card"][data-ytb-page="watch"]
+	ytd-video-preview,
+html[data-ytb-reveal-hover="false"][data-ytb-related="card"][data-ytb-page="watch"]
+	ytd-moving-thumbnail-renderer,
+html[data-ytb-reveal-hover="false"][data-ytb-related="card"][data-ytb-page="watch"]
+	ytd-thumbnail-overlay-loading-preview-renderer,
+html[data-ytb-reveal-hover="false"][data-ytb-related="card"][data-ytb-page="watch"]
+	ytd-thumbnail-overlay-inline-unplayable-renderer {
+	display: none;
+	opacity: 0;
+	pointer-events: none;
+	visibility: hidden;
+}
+
+/* ID selectors (Specificity: 1, 3, 1) */
+html[data-ytb-reveal-hover="false"][data-ytb-home="thumbnail"][data-ytb-page="home"]
+#inline-preview-player,
+html[data-ytb-reveal-hover="false"][data-ytb-home="thumbnail"][data-ytb-page="home"]
+	#video-preview,
+html[data-ytb-reveal-hover="false"][data-ytb-home="thumbnail"][data-ytb-page="home"]
+	#preview,
+html[data-ytb-reveal-hover="false"][data-ytb-home="thumbnail"][data-ytb-page="home"]
+	#mouseover-overlay,
+html[data-ytb-reveal-hover="false"][data-ytb-home="card"][data-ytb-page="home"]
+	#inline-preview-player,
+html[data-ytb-reveal-hover="false"][data-ytb-home="card"][data-ytb-page="home"]
+	#video-preview,
+html[data-ytb-reveal-hover="false"][data-ytb-home="card"][data-ytb-page="home"]
+	#preview,
+html[data-ytb-reveal-hover="false"][data-ytb-home="card"][data-ytb-page="home"]
+	#mouseover-overlay,
+html[data-ytb-reveal-hover="false"][data-ytb-search="thumbnail"][data-ytb-page="search"]
+	#inline-preview-player,
+html[data-ytb-reveal-hover="false"][data-ytb-search="thumbnail"][data-ytb-page="search"]
+	#video-preview,
+html[data-ytb-reveal-hover="false"][data-ytb-search="thumbnail"][data-ytb-page="search"]
+	#preview,
+html[data-ytb-reveal-hover="false"][data-ytb-search="thumbnail"][data-ytb-page="search"]
+	#mouseover-overlay,
+html[data-ytb-reveal-hover="false"][data-ytb-search="card"][data-ytb-page="search"]
+	#inline-preview-player,
+html[data-ytb-reveal-hover="false"][data-ytb-search="card"][data-ytb-page="search"]
+	#video-preview,
+html[data-ytb-reveal-hover="false"][data-ytb-search="card"][data-ytb-page="search"]
+	#preview,
+html[data-ytb-reveal-hover="false"][data-ytb-search="card"][data-ytb-page="search"]
+	#mouseover-overlay,
+html[data-ytb-reveal-hover="false"][data-ytb-related="thumbnail"][data-ytb-page="watch"]
+	#inline-preview-player,
+html[data-ytb-reveal-hover="false"][data-ytb-related="thumbnail"][data-ytb-page="watch"]
+	#video-preview,
+html[data-ytb-reveal-hover="false"][data-ytb-related="thumbnail"][data-ytb-page="watch"]
+	#preview,
+html[data-ytb-reveal-hover="false"][data-ytb-related="thumbnail"][data-ytb-page="watch"]
+	#mouseover-overlay,
+html[data-ytb-reveal-hover="false"][data-ytb-related="card"][data-ytb-page="watch"]
+	#inline-preview-player,
+html[data-ytb-reveal-hover="false"][data-ytb-related="card"][data-ytb-page="watch"]
+	#video-preview,
+html[data-ytb-reveal-hover="false"][data-ytb-related="card"][data-ytb-page="watch"]
+	#preview,
+html[data-ytb-reveal-hover="false"][data-ytb-related="card"][data-ytb-page="watch"]
+	#mouseover-overlay {
+	display: none;
+	opacity: 0;
+	pointer-events: none;
+	visibility: hidden;
 }
