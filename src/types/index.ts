@@ -1,8 +1,9 @@
 export type GreyMode = "none" | "thumbnail" | "card";
+export type SearchGreyMode = Exclude<GreyMode, "card">;
 
 export interface SurfaceConfig {
 	homeFeed: GreyMode;
-	searchResults: GreyMode;
+	searchResults: SearchGreyMode;
 	relatedVideos: GreyMode;
 	comments: GreyMode;
 	revealOnHover: boolean;

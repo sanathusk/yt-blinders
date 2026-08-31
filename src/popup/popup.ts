@@ -67,7 +67,8 @@ function getFormConfig(): SurfaceConfig {
 			`input[name="${surface}"]:checked`,
 		);
 		if (checkedRadio) {
-			config[surface] = checkedRadio.value as GreyMode;
+			(config as Record<SurfaceKey, GreyMode>)[surface] =
+				checkedRadio.value as GreyMode;
 		}
 	});
 
