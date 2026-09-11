@@ -115,6 +115,23 @@ html[data-ytb-page="home"] {
 				pointer-events: none;
 			}
 		}
+
+		/* Mode: Full Card (Reveal on Hover when enabled) */
+		&[data-ytb-reveal-hover="true"] {
+			ytd-rich-item-renderer :is(yt-lockup-view-model, #content),
+			:is(ytd-rich-grid-media, ytd-rich-grid-slim-media, ytd-rich-section-renderer) #content {
+				pointer-events: auto;
+
+				&:hover {
+					background-color: transparent;
+
+					& > * {
+						opacity: 1;
+						pointer-events: auto;
+					}
+				}
+			}
+		}
 	}
 }
 
@@ -314,6 +331,28 @@ html[data-ytb-page="watch"] {
 				}
 			}
 		}
+
+		/* Mode: Full Card (Reveal on Hover when enabled) */
+		&[data-ytb-reveal-hover="true"] {
+			:is(ytd-watch-next-secondary-results-renderer, #related) {
+				& yt-lockup-view-model,
+				& ytd-compact-video-renderer :is(yt-lockup-view-model, #dismissible),
+				& ytd-compact-radio-renderer #dismissible,
+				& ytd-compact-playlist-renderer #content,
+				& ytd-reel-shelf-renderer #dismissible {
+					pointer-events: auto;
+
+					&:hover {
+						background-color: transparent;
+
+						& > * {
+							opacity: 1;
+							pointer-events: auto;
+						}
+					}
+				}
+			}
+		}
 	}
 
 	/* Mode: Full Card (Comments) */
@@ -330,6 +369,22 @@ html[data-ytb-page="watch"] {
 			& > * {
 				opacity: 0;
 				pointer-events: none;
+			}
+		}
+
+		/* Mode: Full Card (Reveal on Hover when enabled) */
+		&[data-ytb-reveal-hover="true"] {
+			ytd-comments #contents :is(ytd-comment-thread-renderer, ytd-comment-view-model, ytd-comment-renderer) {
+				pointer-events: auto;
+
+				&:hover {
+					background-color: transparent;
+
+					& > * {
+						opacity: 1;
+						pointer-events: auto;
+					}
+				}
 			}
 		}
 	}
