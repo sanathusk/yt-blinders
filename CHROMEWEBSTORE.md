@@ -36,7 +36,7 @@ Traditional blockers collapse video elements, causing jarring layout shifts, inf
 - **Granular Modes Per Surface:**
   - **Off:** Normal YouTube display.
   - **Grey Thumbnails:** Masks video thumbnails and channel avatars into neutral grey boxes while leaving video titles and channel names readable (for Home Feed, Search Results, and Related Videos).
-  - **Grey Full Cards / Comments:** Blanks out the entire card or comment thread into a neutral placeholder box and disables pointer clicks/hover previews.
+   - **Grey Full Cards / Comments:** Blanks out the entire card or comment thread into a neutral placeholder box and disables pointer clicks/hover previews (Home Feed, Related Videos, and Comments only).
 
 - **Seamless Dark & Light Theme Matching:**
   - Placeholders automatically adapt to YouTube's native dark and light modes.
@@ -70,6 +70,6 @@ Traditional blockers collapse video elements, causing jarring layout shifts, inf
 
 - **1.0.0** (2026-08-27)
   - Initial release.
-  - Configurable grey-out modes (Off, Thumbnails, Full Cards) for Home Feed, Search Results, Related Videos, and Comments.
+   - Configurable grey-out modes (Off, Thumbnails, Full Cards) for Home Feed, Related Videos, and Comments; Search Results supports Off and Thumbnails only.
   - Dark and Light theme adaptation.
   - Real-time cross-tab synchronization with `chrome.storage.sync`.
