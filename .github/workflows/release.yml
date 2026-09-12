@@ -1,0 +1,51 @@
+name: Release Build & Package
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    name: Build, Verify and Package Extension
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+                    node-version: lts/*
+          cache: 'npm'
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Code Quality Checks
+        run: npx @biomejs/biome check .
+
+      - name: Build Extension
+        run: npm run build
+
+      - name: Verify Build
+        run: npm run verify
+
+      - name: Package Extension (Zip dist/)
+        run: |
+          cd dist
+          zip -r ../yt-blinders-${{ github.ref_name }}.zip .
+          cd ..
+
+      - name: Create GitHub Release Draft
+        uses: softprops/action-gh-release@v2
+        with:
+          files: yt-blinders-${{ github.ref_name }}.zip
+          draft: true
+          generate_release_notes: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
