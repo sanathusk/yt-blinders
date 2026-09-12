@@ -21,18 +21,10 @@ html[data-ytb-page="home"] {
 		ytd-rich-item-renderer {
 			& ytd-thumbnail,
 			& yt-thumbnail-view-model,
-			& yt-lockup-view-model yt-thumbnail-view-model,
-			& #avatar-container,
-			& yt-decorated-avatar-view-model {
+			& yt-lockup-view-model yt-thumbnail-view-model {
 				background-color: var(--ytb-placeholder-bg);
 				position: relative;
 				overflow: hidden;
-			}
-
-			/* Avatar/Channel Logo Circular Placeholders (Home) */
-			& #avatar-container,
-			& yt-decorated-avatar-view-model {
-				border-radius: 50%;
 			}
 		}
 
@@ -65,8 +57,7 @@ html[data-ytb-page="home"] {
 				#inline-preview-player,
 				#video-preview,
 				#preview
-			),
-			& :is(#avatar-container, yt-decorated-avatar-view-model) img {
+			) {
 				opacity: 0;
 			}
 		}
@@ -87,8 +78,7 @@ html[data-ytb-page="home"] {
 			ytd-rich-item-renderer {
 				& ytd-thumbnail:hover :is(yt-image, img, #hover-overlays, #overlays, ytd-player, video),
 				& yt-thumbnail-view-model:hover :is(img, yt-image, yt-image-view-model, yt-animated-image-view-model, yt-thumbnail-overlay-view-model, video),
-				&:hover :is(ytd-moving-thumbnail-renderer, ytd-video-preview, #inline-preview-player, #preview),
-				& :is(#avatar-container:hover, yt-decorated-avatar-view-model:hover) img {
+				&:hover :is(ytd-moving-thumbnail-renderer, ytd-video-preview, #inline-preview-player, #preview) {
 					opacity: 1;
 				}
 			}
@@ -147,32 +137,11 @@ html[data-ytb-page="search"] {
 			& :is(
 				ytd-thumbnail,
 				yt-thumbnail-view-model,
-				yt-lockup-view-model yt-thumbnail-view-model,
-				#channel-thumbnail,
-				#avatar-container,
-				yt-decorated-avatar-view-model
+				yt-lockup-view-model yt-thumbnail-view-model
 			) {
 				background-color: var(--ytb-placeholder-bg);
 				position: relative;
 				overflow: hidden;
-			}
-
-			/* Avatar/Channel Logo Circular Placeholders (Search) */
-			& :is(#channel-thumbnail, #avatar-container, yt-decorated-avatar-view-model) {
-				border-radius: 50%;
-				/* Override YouTube's native avatar mask that clips the grey
-				   placeholder to an oval instead of a circle */
-				-webkit-mask: none;
-				mask: none;
-			}
-		}
-
-		ytd-channel-renderer {
-			& :is(#avatar-container, yt-decorated-avatar-view-model) {
-				background-color: var(--ytb-placeholder-bg);
-				position: relative;
-				overflow: hidden;
-				border-radius: 50%;
 			}
 		}
 
@@ -213,15 +182,13 @@ html[data-ytb-page="search"] {
 				#inline-preview-player,
 				#video-preview,
 				#preview
-			),
-			& :is(#channel-thumbnail, #avatar-container, yt-decorated-avatar-view-model) img {
+			) {
 				opacity: 0;
 			}
 		}
 
 		ytd-radio-renderer ytd-thumbnail img,
 		ytd-playlist-renderer :is(ytd-playlist-thumbnail, yt-thumbnail-view-model) img,
-		ytd-channel-renderer :is(#avatar-container, yt-decorated-avatar-view-model) img,
 		ytd-reel-item-renderer :is(#thumbnail, yt-thumbnail-view-model) img,
 		:is(ytd-radio-renderer, ytd-playlist-renderer, ytd-shelf-renderer, ytd-reel-shelf-renderer, yt-lockup-view-model) ytd-inline-preview-renderer {
 			opacity: 0;
@@ -232,15 +199,13 @@ html[data-ytb-page="search"] {
 			ytd-video-renderer {
 				& ytd-thumbnail:hover :is(yt-image, img, #hover-overlays, #overlays, video),
 				& yt-thumbnail-view-model:hover :is(img, yt-image, yt-image-view-model, yt-animated-image-view-model, yt-thumbnail-overlay-view-model, ytd-thumbnail-overlay-view-model, video),
-				&:hover :is(ytd-moving-thumbnail-renderer, ytd-video-preview, #inline-preview-player, #preview),
-				& :is(#channel-thumbnail:hover, #avatar-container:hover, yt-decorated-avatar-view-model:hover) img {
+				&:hover :is(ytd-moving-thumbnail-renderer, ytd-video-preview, #inline-preview-player, #preview) {
 					opacity: 1;
 				}
 			}
 
 			ytd-radio-renderer ytd-thumbnail:hover img,
 			ytd-playlist-renderer :is(ytd-playlist-thumbnail:hover, yt-thumbnail-view-model:hover) img,
-			ytd-channel-renderer :is(#avatar-container:hover, yt-decorated-avatar-view-model:hover) img,
 			ytd-reel-item-renderer :is(#thumbnail:hover, yt-thumbnail-view-model:hover) img {
 				opacity: 1;
 			}
