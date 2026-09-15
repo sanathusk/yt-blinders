@@ -1,0 +1,6 @@
+[tools]
+actionlint = "latest"
+
+[tasks.actionlint]
+description = "Run actionlint on GitHub Actions workflows"
+run = "actionlint"
