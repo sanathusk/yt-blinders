@@ -22,8 +22,8 @@ It makes YouTube useful without constantly tempting you with what to watch next.
 
 ---
 
-### Technical Details & Contributing
-For project structure, build commands, and how to load the extension for development, see [contribution.md](contribution.md).
+### Technical Details & Development
+For project structure, build commands, and how to load the extension for development, see [DEVELOPMENT.md](DEVELOPMENT.md).
 
 ---
 

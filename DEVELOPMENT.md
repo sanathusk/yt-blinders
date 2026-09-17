@@ -1,4 +1,4 @@
-# Contributing to YT Blinders
+# Developing YT Blinders
 
 We have converted the **YT Blinders** Chrome Extension to a modern **TypeScript** and **Vite** bundler setup.
 
