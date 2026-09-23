@@ -1,7 +1,8 @@
 # YT-Blinders: Learn on YouTube. Don't Get Lost in It.
 
 ## Inspiration
-YouTube is a good learning resource, but its thumbnails are designed to grab attention. You might search for a tutorial and end up watching completely unrelated videos.
+YouTube is a great learning resource, but it is designed to grab attention, keep you hooked through its clickbait thumbnails and an algorithm that constantly suggests unrelated videos.
+You might start with an intention to learn something useful but end up wasting time watching completely unrelated videos for hours together.
 
 ## Why we built it
 Existing extensions to hide thumbnails weren't open-source or didn't work the way we wanted. We built YT-Blinders to fix that.
@@ -10,10 +11,10 @@ Existing extensions to hide thumbnails weren't open-source or didn't work the wa
 
 ![YT-Blinders Demo](demo_image.gif)
 
-YT-Blinders is a Chrome extension for people who use YouTube to learn, research, or follow tutorials. It helps you focus by:
+YT-Blinders is a Chrome extension that helps you stay focused on YouTube by giving you the ability to:
 
-- Hiding thumbnails: Keeps the video cards and titles, but removes the image.
-- Hiding entire cards: Removes the video completely, including the title and text.
+- Hiding thumbnails (Keeps the video cards and titles, but removes the image.)
+- Hiding entire cards (Removes the video completely, including the title and text.)
 
 It works on the:
 - Home page
