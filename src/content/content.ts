@@ -116,7 +116,7 @@ document.addEventListener(
 
 		// Check if target is inside an inline preview / hover player
 		const isInlinePreview = target.closest(
-			"ytd-inline-preview-renderer, ytd-video-preview, #inline-preview-player, #video-preview, #mouseover-overlay, ytd-moving-thumbnail-renderer",
+			"ytd-inline-preview-renderer, ytd-video-preview, #inline-preview-player, #video-preview, #mouseover-overlay, ytd-moving-thumbnail-renderer, .shortsLockupViewModelHostThumbnailParentContainer, ytm-shorts-lockup-view-model, ytm-shorts-lockup-view-model-v2",
 		);
 
 		if (isInlinePreview) {

@@ -28,7 +28,11 @@ html[data-ytb-page="home"] {
 			}
 		}
 
-		:is(ytd-rich-grid-media, ytd-rich-grid-slim-media, ytd-rich-shelf-renderer) {
+		:is(
+				ytd-rich-grid-media,
+				ytd-rich-grid-slim-media,
+				ytd-rich-shelf-renderer
+			) {
 			& :is(ytd-thumbnail, yt-thumbnail-view-model) {
 				background-color: var(--ytb-placeholder-bg);
 				position: relative;
@@ -36,30 +40,84 @@ html[data-ytb-page="home"] {
 			}
 		}
 
-		ytd-reel-item-renderer {
-			& :is(#thumbnail, yt-thumbnail-view-model) {
-				background-color: var(--ytb-placeholder-bg);
-				position: relative;
-				overflow: hidden;
-			}
+		/* Modern YouTube Shorts thumbnails on Home */
+		:is(ytd-rich-shelf-renderer, ytd-reel-shelf-renderer, grid-shelf-view-model)
+			:is(
+				yt-thumbnail-view-model,
+				.shortsLockupViewModelHostThumbnailParentContainer
+			),
+		:is(
+				ytm-shorts-lockup-view-model,
+				ytm-shorts-lockup-view-model-v2,
+				yt-shorts-lockup-view-model
+			)
+			:is(
+				yt-thumbnail-view-model,
+				.shortsLockupViewModelHostThumbnailParentContainer
+			),
+		ytd-reel-item-renderer :is(#thumbnail, yt-thumbnail-view-model) {
+			background-color: var(--ytb-placeholder-bg);
+			position: relative;
+			overflow: hidden;
+			border-radius: 8px;
 		}
 
 		/* Hidden thumbnail and preview elements */
 		ytd-rich-item-renderer {
-			& ytd-thumbnail :is(yt-image, img, #hover-overlays, #overlays, ytd-player, video),
-			& yt-thumbnail-view-model :is(img, yt-image, yt-image-view-model, yt-animated-image-view-model, yt-thumbnail-overlay-view-model, video),
-			& :is(
-				ytd-moving-thumbnail-renderer,
-				ytd-thumbnail-overlay-loading-preview-renderer,
-				ytd-thumbnail-overlay-inline-unplayable-renderer,
-				ytd-inline-preview-renderer,
-				ytd-video-preview,
-				#inline-preview-player,
-				#video-preview,
-				#preview
-			) {
+			&
+				ytd-thumbnail
+				:is(yt-image, img, #hover-overlays, #overlays, ytd-player, video),
+			&
+				yt-thumbnail-view-model
+				:is(
+					img,
+					yt-image,
+					yt-image-view-model,
+					yt-animated-image-view-model,
+					yt-thumbnail-overlay-view-model,
+					video
+				),
+			&
+				:is(
+					ytd-moving-thumbnail-renderer,
+					ytd-thumbnail-overlay-loading-preview-renderer,
+					ytd-thumbnail-overlay-inline-unplayable-renderer,
+					ytd-inline-preview-renderer,
+					ytd-video-preview,
+					#inline-preview-player,
+					#video-preview,
+					#preview
+				) {
 				opacity: 0;
 			}
+		}
+
+		/* Hidden Shorts thumbnail elements */
+		:is(
+				ytd-rich-shelf-renderer,
+				ytd-reel-shelf-renderer,
+				grid-shelf-view-model,
+				ytd-reel-item-renderer,
+				ytm-shorts-lockup-view-model,
+				ytm-shorts-lockup-view-model-v2,
+				yt-shorts-lockup-view-model
+			)
+			:is(
+				yt-thumbnail-view-model,
+				.shortsLockupViewModelHostThumbnailParentContainer,
+				#thumbnail
+			)
+			:is(
+				img,
+				yt-image,
+				yt-image-view-model,
+				yt-animated-image-view-model,
+				yt-thumbnail-overlay-view-model,
+				yt-thumbnail-badge-view-model,
+				yt-thumbnail-bottom-overlay-view-model,
+				video
+			) {
+			opacity: 0;
 		}
 
 		ytd-reel-item-renderer {
@@ -69,22 +127,82 @@ html[data-ytb-page="home"] {
 			}
 		}
 
-		:is(ytd-rich-grid-media, ytd-rich-grid-slim-media, ytd-rich-shelf-renderer, yt-lockup-view-model) ytd-inline-preview-renderer {
+		:is(
+				ytd-rich-grid-media,
+				ytd-rich-grid-slim-media,
+				ytd-rich-shelf-renderer,
+				ytd-reel-shelf-renderer,
+				grid-shelf-view-model,
+				yt-lockup-view-model
+			)
+			ytd-inline-preview-renderer {
 			opacity: 0;
 		}
 
 		/* Mode: Thumbnail (Reveal on Hover when enabled) */
 		&[data-ytb-reveal-hover="true"] {
 			ytd-rich-item-renderer {
-				& ytd-thumbnail:hover :is(yt-image, img, #hover-overlays, #overlays, ytd-player, video),
-				& yt-thumbnail-view-model:hover :is(img, yt-image, yt-image-view-model, yt-animated-image-view-model, yt-thumbnail-overlay-view-model, video),
-				&:hover :is(ytd-moving-thumbnail-renderer, ytd-video-preview, #inline-preview-player, #preview) {
+				&
+					ytd-thumbnail:hover
+					:is(yt-image, img, #hover-overlays, #overlays, ytd-player, video),
+				&
+					yt-thumbnail-view-model:hover
+					:is(
+						img,
+						yt-image,
+						yt-image-view-model,
+						yt-animated-image-view-model,
+						yt-thumbnail-overlay-view-model,
+						video
+					),
+				&:hover
+					:is(
+						ytd-moving-thumbnail-renderer,
+						ytd-video-preview,
+						#inline-preview-player,
+						#preview
+					) {
 					opacity: 1;
 				}
 			}
 
-			ytd-rich-grid-media :is(ytd-thumbnail:hover, yt-thumbnail-view-model:hover) img,
-			ytd-reel-item-renderer :is(#thumbnail:hover, yt-thumbnail-view-model:hover) img {
+			/* Reveal Shorts thumbnail on hover */
+			:is(
+					ytd-rich-shelf-renderer,
+					ytd-reel-shelf-renderer,
+					grid-shelf-view-model
+				)
+				:is(
+					ytd-rich-item-renderer,
+					ytd-reel-item-renderer,
+					ytm-shorts-lockup-view-model,
+					ytm-shorts-lockup-view-model-v2,
+					yt-shorts-lockup-view-model
+				):hover
+				:is(
+					yt-thumbnail-view-model,
+					.shortsLockupViewModelHostThumbnailParentContainer,
+					#thumbnail
+				)
+				:is(
+					img,
+					yt-image,
+					yt-image-view-model,
+					yt-animated-image-view-model,
+					yt-thumbnail-overlay-view-model,
+					yt-thumbnail-badge-view-model,
+					yt-thumbnail-bottom-overlay-view-model,
+					video
+				) {
+				opacity: 1;
+			}
+
+			ytd-rich-grid-media
+				:is(ytd-thumbnail:hover, yt-thumbnail-view-model:hover)
+				img,
+			ytd-reel-item-renderer
+				:is(#thumbnail:hover, yt-thumbnail-view-model:hover)
+				img {
 				opacity: 1;
 			}
 		}
@@ -93,7 +211,13 @@ html[data-ytb-page="home"] {
 	/* Mode: Full Card */
 	&[data-ytb-home="card"] {
 		ytd-rich-item-renderer :is(yt-lockup-view-model, #content),
-		:is(ytd-rich-grid-media, ytd-rich-grid-slim-media, ytd-rich-section-renderer) #content {
+		:is(ytd-rich-grid-media, ytd-rich-grid-slim-media) #content,
+		:is(ytd-rich-shelf-renderer, ytd-reel-shelf-renderer, grid-shelf-view-model)
+			:is(
+				ytm-shorts-lockup-view-model,
+				ytm-shorts-lockup-view-model-v2,
+				yt-shorts-lockup-view-model
+			) {
 			background-color: var(--ytb-placeholder-card-bg);
 			border-radius: 12px;
 			pointer-events: none;
@@ -109,7 +233,17 @@ html[data-ytb-page="home"] {
 		/* Mode: Full Card (Reveal on Hover when enabled) */
 		&[data-ytb-reveal-hover="true"] {
 			ytd-rich-item-renderer :is(yt-lockup-view-model, #content),
-			:is(ytd-rich-grid-media, ytd-rich-grid-slim-media, ytd-rich-section-renderer) #content {
+			:is(ytd-rich-grid-media, ytd-rich-grid-slim-media) #content,
+			:is(
+					ytd-rich-shelf-renderer,
+					ytd-reel-shelf-renderer,
+					grid-shelf-view-model
+				)
+				:is(
+					ytm-shorts-lockup-view-model,
+					ytm-shorts-lockup-view-model-v2,
+					yt-shorts-lockup-view-model
+				) {
 				pointer-events: auto;
 
 				&:hover {
@@ -134,11 +268,12 @@ html[data-ytb-page="search"] {
 	&[data-ytb-search="thumbnail"] {
 		/* Placeholder Backgrounds */
 		ytd-video-renderer {
-			& :is(
-				ytd-thumbnail,
-				yt-thumbnail-view-model,
-				yt-lockup-view-model yt-thumbnail-view-model
-			) {
+			&
+				:is(
+					ytd-thumbnail,
+					yt-thumbnail-view-model,
+					yt-lockup-view-model yt-thumbnail-view-model
+				) {
 				background-color: var(--ytb-placeholder-bg);
 				position: relative;
 				overflow: hidden;
@@ -161,56 +296,205 @@ html[data-ytb-page="search"] {
 			}
 		}
 
-		ytd-reel-item-renderer {
-			& :is(#thumbnail, yt-thumbnail-view-model) {
-				background-color: var(--ytb-placeholder-bg);
-				position: relative;
-				overflow: hidden;
-			}
+		/* Generic lockup view models in search results (playlists, collections, videos) */
+		:is(ytd-item-section-renderer, #contents)
+			yt-lockup-view-model
+			yt-thumbnail-view-model {
+			background-color: var(--ytb-placeholder-bg);
+			position: relative;
+			overflow: hidden;
 		}
 
-		/* Hidden thumbnail and preview elements */
+		/* Shorts in Search Results */
+		:is(grid-shelf-view-model, ytd-reel-shelf-renderer, ytd-shelf-renderer)
+			:is(
+				yt-thumbnail-view-model,
+				.shortsLockupViewModelHostThumbnailParentContainer
+			),
+		:is(
+				ytm-shorts-lockup-view-model,
+				ytm-shorts-lockup-view-model-v2,
+				yt-shorts-lockup-view-model
+			)
+			:is(
+				yt-thumbnail-view-model,
+				.shortsLockupViewModelHostThumbnailParentContainer
+			),
+		ytd-reel-item-renderer :is(#thumbnail, yt-thumbnail-view-model) {
+			background-color: var(--ytb-placeholder-bg);
+			position: relative;
+			overflow: hidden;
+			border-radius: 8px;
+		}
+
+		/* Hidden thumbnail and preview elements (timestamp badge stays legible) */
 		ytd-video-renderer {
-			& ytd-thumbnail :is(yt-image, img, #hover-overlays, #overlays, video),
-			& yt-thumbnail-view-model :is(img, yt-image, yt-image-view-model, yt-animated-image-view-model, yt-thumbnail-overlay-view-model, ytd-thumbnail-overlay-view-model, video),
-			& :is(
-				ytd-moving-thumbnail-renderer,
-				ytd-thumbnail-overlay-loading-preview-renderer,
-				ytd-thumbnail-overlay-inline-unplayable-renderer,
-				ytd-inline-preview-renderer,
-				ytd-video-preview,
-				#inline-preview-player,
-				#video-preview,
-				#preview
-			) {
+			& ytd-thumbnail :is(yt-image, img, #hover-overlays, video),
+			&
+				ytd-thumbnail
+				#overlays
+				> :not(ytd-thumbnail-overlay-time-status-renderer),
+			&
+				yt-thumbnail-view-model
+				:is(
+					img,
+					yt-image,
+					yt-image-view-model,
+					yt-animated-image-view-model,
+					yt-thumbnail-overlay-view-model,
+					ytd-thumbnail-overlay-view-model,
+					video
+				),
+			&
+				:is(
+					ytd-moving-thumbnail-renderer,
+					ytd-thumbnail-overlay-loading-preview-renderer,
+					ytd-thumbnail-overlay-inline-unplayable-renderer,
+					ytd-inline-preview-renderer,
+					ytd-video-preview,
+					#inline-preview-player,
+					#video-preview,
+					#preview
+				) {
 				opacity: 0;
 			}
 		}
 
-		ytd-radio-renderer ytd-thumbnail img,
-		ytd-playlist-renderer :is(ytd-playlist-thumbnail, yt-thumbnail-view-model) img,
-		ytd-reel-item-renderer :is(#thumbnail, yt-thumbnail-view-model) img,
-		:is(ytd-radio-renderer, ytd-playlist-renderer, ytd-shelf-renderer, ytd-reel-shelf-renderer, yt-lockup-view-model) ytd-inline-preview-renderer {
+		/* Hidden playlist and radio elements */
+		ytd-radio-renderer
+			:is(ytd-thumbnail, yt-thumbnail-view-model)
+			:is(img, yt-image, yt-image-view-model),
+		ytd-playlist-renderer
+			:is(ytd-playlist-thumbnail, yt-thumbnail-view-model)
+			:is(img, yt-image, yt-image-view-model),
+		:is(ytd-item-section-renderer, #contents)
+			yt-lockup-view-model
+			yt-thumbnail-view-model
+			:is(
+				img,
+				yt-image,
+				yt-image-view-model,
+				yt-animated-image-view-model,
+				yt-thumbnail-overlay-view-model,
+				video
+			),
+		/* Hidden Shorts elements in Search */
+			:is(
+				grid-shelf-view-model,
+				ytd-reel-shelf-renderer,
+				ytd-shelf-renderer,
+				ytm-shorts-lockup-view-model,
+				ytm-shorts-lockup-view-model-v2,
+				yt-shorts-lockup-view-model,
+				ytd-reel-item-renderer
+			)
+			:is(
+				yt-thumbnail-view-model,
+				.shortsLockupViewModelHostThumbnailParentContainer,
+				#thumbnail
+			)
+			:is(
+				img,
+				yt-image,
+				yt-image-view-model,
+				yt-animated-image-view-model,
+				yt-thumbnail-overlay-view-model,
+				yt-thumbnail-badge-view-model,
+				yt-thumbnail-bottom-overlay-view-model,
+				video
+			) {
+			opacity: 0;
+		}
+
+		:is(
+				ytd-radio-renderer,
+				ytd-playlist-renderer,
+				ytd-shelf-renderer,
+				ytd-reel-shelf-renderer,
+				grid-shelf-view-model,
+				yt-lockup-view-model
+			)
+			ytd-inline-preview-renderer {
 			opacity: 0;
 		}
 
 		/* Mode: Thumbnail (Reveal on Hover when enabled) */
 		&[data-ytb-reveal-hover="true"] {
 			ytd-video-renderer {
-				& ytd-thumbnail:hover :is(yt-image, img, #hover-overlays, #overlays, video),
-				& yt-thumbnail-view-model:hover :is(img, yt-image, yt-image-view-model, yt-animated-image-view-model, yt-thumbnail-overlay-view-model, ytd-thumbnail-overlay-view-model, video),
-				&:hover :is(ytd-moving-thumbnail-renderer, ytd-video-preview, #inline-preview-player, #preview) {
+				&
+					ytd-thumbnail:hover
+					:is(yt-image, img, #hover-overlays, #overlays, video),
+				&
+					yt-thumbnail-view-model:hover
+					:is(
+						img,
+						yt-image,
+						yt-image-view-model,
+						yt-animated-image-view-model,
+						yt-thumbnail-overlay-view-model,
+						ytd-thumbnail-overlay-view-model,
+						video
+					),
+				&:hover
+					:is(
+						ytd-moving-thumbnail-renderer,
+						ytd-video-preview,
+						#inline-preview-player,
+						#preview
+					) {
 					opacity: 1;
 				}
 			}
 
-			ytd-radio-renderer ytd-thumbnail:hover img,
-			ytd-playlist-renderer :is(ytd-playlist-thumbnail:hover, yt-thumbnail-view-model:hover) img,
-			ytd-reel-item-renderer :is(#thumbnail:hover, yt-thumbnail-view-model:hover) img {
+			ytd-radio-renderer
+				:is(ytd-thumbnail:hover, yt-thumbnail-view-model:hover)
+				img,
+			ytd-playlist-renderer
+				:is(ytd-playlist-thumbnail:hover, yt-thumbnail-view-model:hover)
+				:is(img, yt-image, yt-image-view-model),
+			:is(ytd-item-section-renderer, #contents)
+				yt-lockup-view-model:hover
+				yt-thumbnail-view-model
+				:is(
+					img,
+					yt-image,
+					yt-image-view-model,
+					yt-animated-image-view-model,
+					yt-thumbnail-overlay-view-model,
+					video
+				),
+			:is(grid-shelf-view-model, ytd-reel-shelf-renderer, ytd-shelf-renderer)
+				:is(
+					ytm-shorts-lockup-view-model,
+					ytm-shorts-lockup-view-model-v2,
+					yt-shorts-lockup-view-model,
+					ytd-reel-item-renderer
+				):hover
+				:is(
+					yt-thumbnail-view-model,
+					.shortsLockupViewModelHostThumbnailParentContainer,
+					#thumbnail
+				)
+				:is(
+					img,
+					yt-image,
+					yt-image-view-model,
+					yt-animated-image-view-model,
+					yt-thumbnail-overlay-view-model,
+					yt-thumbnail-badge-view-model,
+					yt-thumbnail-bottom-overlay-view-model,
+					video
+				) {
+				opacity: 1;
+			}
+
+			ytd-reel-item-renderer
+				:is(#thumbnail:hover, yt-thumbnail-view-model:hover)
+				img {
 				opacity: 1;
 			}
 		}
-		}
+	}
 }
 
 /* ==========================================================================
@@ -224,27 +508,55 @@ html[data-ytb-page="watch"] {
 			/* Placeholder Backgrounds */
 			& ytd-compact-video-renderer :is(ytd-thumbnail, yt-thumbnail-view-model),
 			& ytd-compact-radio-renderer :is(ytd-thumbnail, yt-thumbnail-view-model),
-			& ytd-compact-playlist-renderer :is(ytd-playlist-thumbnail, yt-thumbnail-view-model),
-			& yt-lockup-view-model yt-thumbnail-view-model {
+			&
+				ytd-compact-playlist-renderer
+				:is(ytd-playlist-thumbnail, yt-thumbnail-view-model),
+			& yt-lockup-view-model yt-thumbnail-view-model,
+			&
+				:is(grid-shelf-view-model, ytd-reel-shelf-renderer)
+				:is(
+					yt-thumbnail-view-model,
+					.shortsLockupViewModelHostThumbnailParentContainer
+				),
+			&
+				:is(
+					ytm-shorts-lockup-view-model,
+					ytm-shorts-lockup-view-model-v2,
+					yt-shorts-lockup-view-model
+				)
+				:is(
+					yt-thumbnail-view-model,
+					.shortsLockupViewModelHostThumbnailParentContainer
+				) {
 				background-color: var(--ytb-placeholder-bg);
 				position: relative;
 				overflow: hidden;
+				border-radius: 8px;
 			}
 
 			/* Hidden thumbnail and preview elements */
 			& ytd-compact-video-renderer {
 				& ytd-thumbnail :is(yt-image, img, #overlays),
-				& yt-thumbnail-view-model :is(img, yt-image, yt-image-view-model, yt-animated-image-view-model, yt-thumbnail-overlay-view-model),
-				& :is(
-					ytd-moving-thumbnail-renderer,
-					ytd-thumbnail-overlay-loading-preview-renderer,
-					ytd-thumbnail-overlay-inline-unplayable-renderer,
-					ytd-inline-preview-renderer,
-					ytd-video-preview,
-					#inline-preview-player,
-					#video-preview,
-					video
-				) {
+				&
+					yt-thumbnail-view-model
+					:is(
+						img,
+						yt-image,
+						yt-image-view-model,
+						yt-animated-image-view-model,
+						yt-thumbnail-overlay-view-model
+					),
+				&
+					:is(
+						ytd-moving-thumbnail-renderer,
+						ytd-thumbnail-overlay-loading-preview-renderer,
+						ytd-thumbnail-overlay-inline-unplayable-renderer,
+						ytd-inline-preview-renderer,
+						ytd-video-preview,
+						#inline-preview-player,
+						#video-preview,
+						video
+					) {
 					opacity: 0;
 				}
 			}
@@ -255,6 +567,29 @@ html[data-ytb-page="watch"] {
 					opacity: 0;
 				}
 			}
+
+			&
+				:is(
+					grid-shelf-view-model,
+					ytd-reel-shelf-renderer,
+					ytm-shorts-lockup-view-model,
+					ytm-shorts-lockup-view-model-v2,
+					yt-shorts-lockup-view-model
+				)
+				:is(
+					yt-thumbnail-view-model,
+					.shortsLockupViewModelHostThumbnailParentContainer
+				)
+				:is(
+					img,
+					yt-image,
+					yt-image-view-model,
+					yt-animated-image-view-model,
+					yt-thumbnail-overlay-view-model,
+					video
+				) {
+				opacity: 0;
+			}
 		}
 
 		/* Mode: Thumbnail (Reveal on Hover when enabled) */
@@ -262,7 +597,14 @@ html[data-ytb-page="watch"] {
 			:is(ytd-watch-next-secondary-results-renderer, #related) {
 				& ytd-compact-video-renderer {
 					& ytd-thumbnail:hover :is(yt-image, img, #overlays),
-					& yt-thumbnail-view-model:hover :is(img, yt-image, yt-image-view-model, yt-animated-image-view-model),
+					&
+						yt-thumbnail-view-model:hover
+						:is(
+							img,
+							yt-image,
+							yt-image-view-model,
+							yt-animated-image-view-model
+						),
 					& yt-thumbnail-overlay-view-model:hover,
 					&:hover :is(ytd-moving-thumbnail-renderer, ytd-video-preview, video) {
 						opacity: 1;
@@ -270,6 +612,28 @@ html[data-ytb-page="watch"] {
 				}
 
 				& yt-lockup-view-model yt-thumbnail-view-model:hover img {
+					opacity: 1;
+				}
+
+				&
+					:is(grid-shelf-view-model, ytd-reel-shelf-renderer)
+					:is(
+						ytm-shorts-lockup-view-model,
+						ytm-shorts-lockup-view-model-v2,
+						yt-shorts-lockup-view-model,
+						ytd-reel-item-renderer
+					):hover
+					:is(
+						yt-thumbnail-view-model,
+						.shortsLockupViewModelHostThumbnailParentContainer
+					)
+					:is(
+						img,
+						yt-image,
+						yt-image-view-model,
+						yt-animated-image-view-model,
+						video
+					) {
 					opacity: 1;
 				}
 			}
@@ -283,7 +647,15 @@ html[data-ytb-page="watch"] {
 			& ytd-compact-video-renderer :is(yt-lockup-view-model, #dismissible),
 			& ytd-compact-radio-renderer #dismissible,
 			& ytd-compact-playlist-renderer #content,
-			& ytd-reel-shelf-renderer #dismissible {
+			&
+				:is(grid-shelf-view-model, ytd-reel-shelf-renderer)
+				:is(
+					ytm-shorts-lockup-view-model,
+					ytm-shorts-lockup-view-model-v2,
+					yt-shorts-lockup-view-model,
+					ytd-reel-item-renderer,
+					#dismissible
+				) {
 				background-color: var(--ytb-placeholder-card-bg);
 				border-radius: 8px;
 				pointer-events: none;
@@ -304,7 +676,15 @@ html[data-ytb-page="watch"] {
 				& ytd-compact-video-renderer :is(yt-lockup-view-model, #dismissible),
 				& ytd-compact-radio-renderer #dismissible,
 				& ytd-compact-playlist-renderer #content,
-				& ytd-reel-shelf-renderer #dismissible {
+				&
+					:is(grid-shelf-view-model, ytd-reel-shelf-renderer)
+					:is(
+						ytm-shorts-lockup-view-model,
+						ytm-shorts-lockup-view-model-v2,
+						yt-shorts-lockup-view-model,
+						ytd-reel-item-renderer,
+						#dismissible
+					) {
 					pointer-events: auto;
 
 					&:hover {
@@ -322,7 +702,13 @@ html[data-ytb-page="watch"] {
 
 	/* Mode: Full Card (Comments) */
 	&[data-ytb-comments="card"] {
-		ytd-comments #contents :is(ytd-comment-thread-renderer, ytd-comment-view-model, ytd-comment-renderer) {
+		ytd-comments
+			#contents
+			:is(
+				ytd-comment-thread-renderer,
+				ytd-comment-view-model,
+				ytd-comment-renderer
+			) {
 			background-color: var(--ytb-placeholder-card-bg);
 			border-radius: 8px;
 			padding: 12px;
@@ -339,7 +725,13 @@ html[data-ytb-page="watch"] {
 
 		/* Mode: Full Card (Reveal on Hover when enabled) */
 		&[data-ytb-reveal-hover="true"] {
-			ytd-comments #contents :is(ytd-comment-thread-renderer, ytd-comment-view-model, ytd-comment-renderer) {
+			ytd-comments
+				#contents
+				:is(
+					ytd-comment-thread-renderer,
+					ytd-comment-view-model,
+					ytd-comment-renderer
+				) {
 				pointer-events: auto;
 
 				&:hover {
@@ -361,29 +753,30 @@ html[data-ytb-page="watch"] {
 
 html[data-ytb-reveal-hover="false"] {
 	&:is(
-		[data-ytb-page="home"]:is([data-ytb-home="thumbnail"], [data-ytb-home="card"]),
-		[data-ytb-page="search"]:is([data-ytb-search="thumbnail"]),
-		[data-ytb-page="watch"]:is([data-ytb-related="thumbnail"], [data-ytb-related="card"])
-	) {
-		:is(
-			ytd-inline-preview-renderer,
-			ytd-video-preview,
-			ytd-moving-thumbnail-renderer,
-			ytd-thumbnail-overlay-loading-preview-renderer,
-			ytd-thumbnail-overlay-inline-unplayable-renderer
+			[data-ytb-page="home"]:is(
+				[data-ytb-home="thumbnail"],
+				[data-ytb-home="card"]
+			),
+			[data-ytb-page="search"]:is([data-ytb-search="thumbnail"]),
+			[data-ytb-page="watch"]:is(
+				[data-ytb-related="thumbnail"],
+				[data-ytb-related="card"]
+			)
 		) {
+		:is(
+				ytd-inline-preview-renderer,
+				ytd-video-preview,
+				ytd-moving-thumbnail-renderer,
+				ytd-thumbnail-overlay-loading-preview-renderer,
+				ytd-thumbnail-overlay-inline-unplayable-renderer
+			) {
 			display: none;
 			opacity: 0;
 			pointer-events: none;
 			visibility: hidden;
 		}
 
-		:is(
-			#inline-preview-player,
-			#video-preview,
-			#preview,
-			#mouseover-overlay
-		) {
+		:is(#inline-preview-player, #video-preview, #preview, #mouseover-overlay) {
 			display: none;
 			opacity: 0;
 			pointer-events: none;
