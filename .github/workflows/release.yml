@@ -17,23 +17,8 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: lts/*
-          cache: 'npm'
-
-      - name: Install Dependencies
-        run: npm ci
-
-      - name: Code Quality Checks
-        run: npx @biomejs/biome check .
-
-      - name: Build Extension
-        run: npm run build
-
-      - name: Verify Build
-        run: npm run verify
+      - name: Build and Verify
+        uses: ./.github/actions/build-verify
 
       - name: Package Extension (Zip dist/)
         run: |

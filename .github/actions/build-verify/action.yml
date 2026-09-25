@@ -1,0 +1,26 @@
+name: Build and verify extension
+description: Setup Bun, install dependencies, run checks, build and verify the extension. Requires the repository to be checked out first.
+
+runs:
+  using: composite
+  steps:
+    - name: Setup Bun
+      uses: oven-sh/setup-bun@v2
+      with:
+        bun-version: latest
+
+    - name: Install Dependencies
+      run: bun install --frozen-lockfile
+      shell: bash
+
+    - name: Code Quality Checks
+      run: bun run check
+      shell: bash
+
+    - name: Build Extension
+      run: bun run build
+      shell: bash
+
+    - name: Verify Build
+      run: bun run verify
+      shell: bash
