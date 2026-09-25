@@ -6,7 +6,8 @@
 	"scripts": {
 		"generate-icons": "node scripts/generate-icons.js",
 		"build": "tsc && vite build",
-		"check:fix": "npx @biomejs/biome check --write",
+		"check": "bunx --bun @biomejs/biome check .",
+		"check:fix": "bunx --bun @biomejs/biome check --write",
 		"dev": "vite build --watch",
 		"verify": "node scripts/verify-extension.js"
 	},
