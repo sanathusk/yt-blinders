@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "bash":{
+      "mise run actionlint":"allow"
+    }
+  }
+}
