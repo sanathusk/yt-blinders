@@ -22,15 +22,15 @@ CI (`ci.yml`) lints PR titles. `release-please[bot]` PRs are exempt.
 Once `feat:`/`fix:` commits land on `main`, the **Release Please** workflow opens
 (or updates) a `chore(main): release X.Y.Z` PR. It bumps automatically:
 
-- [ ] [`package.json`](file:///Users/sanath/git_views_sanath/yt-blinders/package.json) (under `"version"`, via `node` strategy)
-- [ ] [`manifest.json`](file:///Users/sanath/git_views_sanath/yt-blinders/manifest.json) (under `"version"`, via `extra-files` in `release-please-config.json`)
+- [ ] [`package.json`](package.json) (under `"version"`, via `node` strategy)
+- [ ] [`manifest.json`](manifest.json) (under `"version"`, via `extra-files` in `release-please-config.json`)
 - [ ] `CHANGELOG.md` (generated notes)
 
 Review that PR:
 
 - [ ] **Verify version bump + changelog look correct.**
 - [ ] **Sync store copy manually if needed:**
-  [`CHROMEWEBSTORE.md`](file:///Users/sanath/git_views_sanath/yt-blinders/CHROMEWEBSTORE.md) Version History is **not** auto-updated — edit it in the Release PR or a follow-up before merging if the store listing changed.
+  [`CHROMEWEBSTORE.md`](yt-blinders/CHROMEWEBSTORE.md) Version History is **not** auto-updated — edit it in the Release PR or a follow-up before merging if the store listing changed.
 - [ ] **Merge the Release PR** (squash or merge commit both work).
 
 Merging automatically:
@@ -79,6 +79,6 @@ bun run verify
   2. Select the **YT Blinders** item (or create a new item if this is the initial submission).
   3. Upload the downloaded `yt-blinders-vX.Y.Z.zip` package in the **Package** tab.
 - [ ] **Review Store Listings:**
-  Verify listing copy against [`CHROMEWEBSTORE.md`](file:///Users/sanath/git_views_sanath/yt-blinders/CHROMEWEBSTORE.md) if changes were made to descriptions, screenshots, or privacy policies.
+  Verify listing copy against [`CHROMEWEBSTORE.md`](CHROMEWEBSTORE.md) if changes were made to descriptions, screenshots, or privacy policies.
 - [ ] **Submit for Review:**
   Click **Submit for review**.

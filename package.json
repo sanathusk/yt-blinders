@@ -1,7 +1,7 @@
 {
 	"name": "yt-blinders",
 	"version": "1.0.0",
-	"description": "YouTube Thumbnail & Card Grey-Out Chrome Extension",
+	"description": "Chrome Extension to Grey-out thumbnails on YouTube",
 	"type": "module",
 	"scripts": {
 		"generate-icons": "node scripts/generate-icons.js",
