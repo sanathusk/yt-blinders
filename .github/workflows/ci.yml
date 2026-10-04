@@ -10,8 +10,8 @@ permissions:
   contents: read
 
 jobs:
-  lint-workflows:
-    name: Lint Workflows
+  ci:
+    name: Lint and Build
     runs-on: ubuntu-latest
 
     steps:
@@ -24,13 +24,30 @@ jobs:
       - name: Lint Workflows
         run: mise run actionlint
 
-  build-verify:
-    name: Build and Verify Extension
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4
-
       - name: Build and Verify
         uses: ./.github/actions/build-verify
+
+  semantic-pr:
+    name: Lint PR Title (Conventional Commits)
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request' && github.event.pull_request.user.login != 'release-please[bot]'
+    permissions:
+      pull-requests: read
+    steps:
+      - name: Lint PR Title
+        uses: amannn/action-semantic-pull-request@v6
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          types: |
+            feat
+            fix
+            chore
+            docs
+            refactor
+            perf
+            test
+            build
+            ci
+            revert
+          requireScope: false

@@ -60,3 +60,12 @@ $ npm run verify
 5. Select the `dist/` directory inside this repository:
    `<git_root>/yt-blinders/dist`
 6. Open [YouTube](https://www.youtube.com/) and test toggling greying modes on Home Feed, Search Results, Related Videos, and Comments.
+
+## 📦 Releasing
+
+Releases are automated with `release-please` (see `release-checklist.md`):
+
+1. Merge PRs with [Conventional Commit](https://www.conventionalcommits.org/) titles: `fix:`, `feat:`, `feat!:` for breaking changes. Use squash-merge.
+2. `release-please` opens a `chore(main): release X.Y.Z` PR bumping `package.json` + `manifest.json` (`extra-files` in `release-please-config.json`) + `CHANGELOG.md`.
+3. Merge that PR — it tags `vX.Y.Z`, creates the GitHub Release, and `release.yml` builds, verifies, zips `dist/`, and uploads the asset.
+4. `CHROMEWEBSTORE.md` Version History is still manual — update it in the Release PR if needed.

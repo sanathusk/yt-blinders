@@ -2,10 +2,10 @@
 
 ## Metadata
 
-- **Name:** YT Blinders - Thumbnail & Card Grey-Out
+- **Name:** YT Blinders - Grey-out thumbnails on YouTube
 - **Short Name:** YT Blinders
 - **Version:** 1.0.0
-- **Category:** Productivity / Accessibility
+- **Category:** Lifestyle / Well-being
 - **Default Language:** English
 - **Last Updated:** 2026-08-27
 
@@ -14,38 +14,33 @@
 ## Store Listing Copy
 
 ### Short Description (Max 132 chars)
-Grey out YouTube thumbnails or entire video and comment cards to reduce visual clutter, dopamine triggers, and impulsive clicks.
+Grey out YouTube thumbnails or full video and comment cards to cut impulse clicks.
 
 ### Detailed Description
 
-**Regain focus and intentionality while using YouTube.**
-
-YT Blinders is a lightweight, privacy-friendly Chrome extension designed to neutralize visual bait and dopamine triggers on YouTube without breaking the site's layout or your intentional viewing experience.
-
-### Why Grey-Out Instead of Full Removal?
-Traditional blockers collapse video elements, causing jarring layout shifts, infinite-scroll recalculation loops, and visual jumping. **YT Blinders preserves YouTube's grid structure and spacing** by replacing distracting elements with solid, theme-aware neutral grey placeholders.
+YT Blinders replaces YouTube thumbnails and channel avatars with grey boxes. Titles and channel names stay readable, so you can still find the video you came for.
 
 ### Key Features
 
-- **4 Independent Surfaces:**
-  - 🏠 **Home Feed (`/`):** Control recommendations on the main page.
-  - 🔍 **Search Results (`/results`):** Browse queries without clickbait distractions.
-  - 🎬 **Related Videos (`/watch` sidebar):** Stop endless rabbit-hole clicking while watching a video.
-  - 💬 **Comments Section (`/watch` comments):** Keep normal comments or grey out entire comment threads.
+- **4 surfaces, set separately:**
+  - **Home Feed (`/`):** recommendations on the main page.
+  - **Search Results (`/results`):** results for your query.
+  - **Related Videos (`/watch` sidebar):** suggestions next to the player.
+  - **Comments Section (`/watch` comments):** keep comments readable or grey out full threads.
 
-- **Granular Modes Per Surface:**
-  - **Off:** Normal YouTube display.
-  - **Grey Thumbnails:** Masks video thumbnails and channel avatars into neutral grey boxes while leaving video titles and channel names readable (for Home Feed, Search Results, and Related Videos).
-   - **Grey Full Cards / Comments:** Blanks out the entire card or comment thread into a neutral placeholder box and disables pointer clicks/hover previews (Home Feed, Related Videos, and Comments only).
+- **Modes per surface:**
+  - **Off:** normal YouTube.
+  - **Grey thumbnails:** thumbnails and avatars become grey boxes. Titles and channel names stay readable (Home Feed, Search Results, and Related Videos).
+  - **Grey full cards / comments:** the whole card or comment becomes a grey box. Clicks and hover previews are blocked (Home Feed, Related Videos, and Comments only).
 
-- **Seamless Dark & Light Theme Matching:**
-  - Placeholders automatically adapt to YouTube's native dark and light modes.
+- **Matches dark and light mode:**
+  - Placeholders use YouTube's native colors.
 
-- **Instant Real-Time Sync:**
-  - Preferences synchronize across tabs and devices via `chrome.storage.sync` with immediate real-time effect.
+- **Syncs across tabs and devices:**
+  - Settings save to `chrome.storage.sync` and apply right away.
 
-- **Zero Bloat & 100% Client-Side:**
-  - No background tracking, no remote scripts, and no analytics.
+- **Runs only in your browser:**
+  - No tracking, no remote scripts, no analytics.
 
 ---
 
@@ -62,7 +57,7 @@ Traditional blockers collapse video elements, causing jarring layout shifts, inf
 
 - **Does this extension collect user data?** No.
 - **Does this extension transmit data to external servers?** No.
-- **Single Purpose Declaration:** The extension serves a single dedicated purpose: allowing users to grey out video thumbnails and recommendation cards on YouTube to reduce visual distractions.
+- **Single Purpose:** Grey out video thumbnails and recommendation cards on YouTube.
 
 ---
 
@@ -70,6 +65,6 @@ Traditional blockers collapse video elements, causing jarring layout shifts, inf
 
 - **1.0.0** (2026-08-27)
   - Initial release.
-   - Configurable grey-out modes (Off, Thumbnails, Full Cards) for Home Feed, Related Videos, and Comments; Search Results supports Off and Thumbnails only.
-  - Dark and Light theme adaptation.
-  - Real-time cross-tab synchronization with `chrome.storage.sync`.
+  - Grey-out modes (Off, Thumbnails, Full Cards) for Home Feed, Related Videos, and Comments; Search Results supports Off and Thumbnails only.
+  - Dark and light theme support.
+  - Cross-tab sync with `chrome.storage.sync`.

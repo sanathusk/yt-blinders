@@ -1,6 +1,6 @@
 {
 	"manifest_version": 3,
-	"name": "YT Blinders - Thumbnail & Card Grey-Out",
+	"name": "YT Blinders",
 	"version": "1.0.0",
 	"description": "Reduces visual temptation and dopamine triggers on YouTube by greying out thumbnails or entire video and comment cards.",
 	"icons": {
