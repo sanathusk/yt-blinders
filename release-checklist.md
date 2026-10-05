@@ -1,64 +1,54 @@
 # YT Blinders Release Checklist
 
 Follow this checklist to build, verify, package, and publish a new release of **YT Blinders**.
-Versioning is automated with [release-please](https://github.com/googleapis/release-please).
+Releases are manual: bump the version, push a `v*` tag, and GitHub Actions builds the zip.
 
 ---
 
-## 1. Land Changes With Conventional Commits
+## 1. Bump the Version
 
-`release-please` decides the next version from commit messages on `main`.
-Use squash-merge so each PR becomes one release note entry:
+Keep these two files in sync (same version in both):
 
-- `fix:` → patch bump (e.g. `1.0.0` → `1.0.1`)
-- `feat:` → minor bump (e.g. `1.0.0` → `1.1.0`)
-- `feat!:`, `fix!:` (breaking change) → major bump
-- `chore:`, `docs:`, `refactor:` → no release (CI lint still requires this format)
+- [ ] [`package.json`](package.json) (`"version"`)
+- [ ] [`manifest.json`](manifest.json) (`"version"`)
 
-CI (`ci.yml`) lints PR titles. `release-please[bot]` PRs are exempt.
+Commit the bump on `main`, e.g.:
 
-## 2. Merge the Release PR (Automatic Versioning)
+```bash
+bun run check
+bun run build
+bun run verify
+git add package.json manifest.json
+git commit -m "chore: release X.Y.Z"
+git push origin main
+```
 
-Once `feat:`/`fix:` commits land on `main`, the **Release Please** workflow opens
-(or updates) a `chore(main): release X.Y.Z` PR. It bumps automatically:
-
-- [ ] [`package.json`](package.json) (under `"version"`, via `node` strategy)
-- [ ] [`manifest.json`](manifest.json) (under `"version"`, via `extra-files` in `release-please-config.json`)
-- [ ] `CHANGELOG.md` (generated notes)
-
-Review that PR:
-
-- [ ] **Verify version bump + changelog look correct.**
 - [ ] **Sync store copy manually if needed:**
-  [`CHROMEWEBSTORE.md`](yt-blinders/CHROMEWEBSTORE.md) Version History is **not** auto-updated — edit it in the Release PR or a follow-up before merging if the store listing changed.
-- [ ] **Merge the Release PR** (squash or merge commit both work).
+  [`CHROMEWEBSTORE.md`](CHROMEWEBSTORE.md) Version History is **not** auto-updated — edit it in the same commit or a follow-up if the store listing changed.
 
-Merging automatically:
+## 2. Tag and Push
 
-1. Commits `CHANGELOG.md` + version bumps to `main`.
-2. Creates git tag `vX.Y.Z` (config: `include-v-in-tag: true`).
-3. Creates a GitHub Release with generated notes.
-4. Updates `.release-please-manifest.json` tracking state.
+- [ ] Create the tag (must match `v*` so `release.yml` triggers):
 
-Do **not** create tags manually (`git tag -a v...`) — it bypasses the changelog.
-
-Config: `release-please-config.json`, `.release-please-manifest.json`,
-workflow: `.github/workflows/release-please.yml`.
+```bash
+git tag -a vX.Y.Z -m "vX.Y.Z"
+git push origin vX.Y.Z
+```
 
 ---
 
 ## 3. GitHub Actions Workflow Execution
 
-The tag `v*` pushed by `release-please` triggers `release.yml`:
+The pushed `v*` tag triggers `release.yml` (`.github/workflows/release.yml`):
 
 - [ ] **Monitor Workflow:**
   Check the **Actions** tab → **Release Build & Package** run for tag `vX.Y.Z`.
   It runs the shared `build-verify` action (`bun install` → `check` → `build` → `verify`), then zips `dist/` to `yt-blinders-vX.Y.Z.zip`.
-- [ ] **Verify GitHub Release Assets:**
-  Go to **Releases** → `vX.Y.Z` (already published by `release-please`):
-  - Release notes come from `release-please` (not `generate_release_notes`).
-  - Verify `yt-blinders-vX.Y.Z.zip` was uploaded by `release.yml` (`softprops/action-gh-release`, `fail_on_unmatched_files: true`).
-  - No manual publish step — the release is already public.
+- [ ] **Verify GitHub Release Draft:**
+  Go to **Releases** → `vX.Y.Z` (created as a **draft** by `release.yml` via `softprops/action-gh-release`):
+  - Release notes are auto-generated (`generate_release_notes: true`) — edit them if needed.
+  - Verify `yt-blinders-vX.Y.Z.zip` was uploaded (`fail_on_unmatched_files: true`).
+  - Click **Publish release** when ready.
 
 Local pre-checks (optional, CI already runs them):
 

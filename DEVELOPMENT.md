@@ -63,9 +63,9 @@ $ npm run verify
 
 ## 📦 Releasing
 
-Releases are automated with `release-please` (see `release-checklist.md`):
+Releases are manual tag releases (see `release-checklist.md`):
 
-1. Merge PRs with [Conventional Commit](https://www.conventionalcommits.org/) titles: `fix:`, `feat:`, `feat!:` for breaking changes. Use squash-merge.
-2. `release-please` opens a `chore(main): release X.Y.Z` PR bumping `package.json` + `manifest.json` (`extra-files` in `release-please-config.json`) + `CHANGELOG.md`.
-3. Merge that PR — it tags `vX.Y.Z`, creates the GitHub Release, and `release.yml` builds, verifies, zips `dist/`, and uploads the asset.
-4. `CHROMEWEBSTORE.md` Version History is still manual — update it in the Release PR if needed.
+1. Bump `package.json` + `manifest.json` to `X.Y.Z`, commit and push to `main`.
+2. Tag and push: `git tag -a vX.Y.Z -m "vX.Y.Z" && git push origin vX.Y.Z`.
+3. `release.yml` builds, verifies, zips `dist/`, and creates a **draft** GitHub Release with generated notes + zip asset — publish it when ready.
+4. `CHROMEWEBSTORE.md` Version History is still manual — update it if needed.
