@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sanathusk.github.io/yt-blinders/sitemap.xml
