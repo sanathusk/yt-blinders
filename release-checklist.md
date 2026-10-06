@@ -1,74 +1,74 @@
 # YT Blinders Release Checklist
 
 Follow this checklist to build, verify, package, and publish a new release of **YT Blinders**.
+Releases are manual: bump the version, push a `v*` tag, and GitHub Actions builds the zip.
 
 ---
 
-## 1. Pre-Release Checks & Versioning
+## 1. Bump the Version
 
-- [ ] **Sync Version Numbers:**
-  Ensure the version matches across all files:
-  - [ ] [`package.json`](file:///Users/sanath/git_views_sanath/yt-blinders/package.json) (under `"version"`)
-  - [ ] [`manifest.json`](file:///Users/sanath/git_views_sanath/yt-blinders/manifest.json) (under `"version"`)
-  - [ ] [`CHROMEWEBSTORE.md`](file:///Users/sanath/git_views_sanath/yt-blinders/CHROMEWEBSTORE.md) (in Version History)
-- [ ] **Run Code Quality Tools:**
-  Format and lint the codebase:
-  ```bash
-  npm run check:fix
-  ```
-- [ ] **Perform Local Verification:**
-  Build and verify the build output locally to catch errors early:
-  ```bash
-  npm run build
-  npm run verify
-  ```
+Keep these two files in sync (same version in both):
 
----
+- [ ] [`package.json`](package.json) (`"version"`)
+- [ ] [`manifest.json`](manifest.json) (`"version"`)
 
-## 2. Creating the Release Tag
+Commit the bump on `main`, e.g.:
 
-To trigger the automated GitHub Actions release workflow, tag and push the code:
+```bash
+bun run check
+bun run build
+bun run verify
+git add package.json manifest.json
+git commit -m "chore: release X.Y.Z"
+git push origin main
+```
 
-- [ ] **Commit all version changes:**
-  ```bash
-  git add package.json manifest.json CHROMEWEBSTORE.md
-  git commit -m "chore: bump version to v1.X.X"
-  git push origin main
-  ```
-- [ ] **Create a git tag:**
-  ```bash
-  git tag -a v1.X.X -m "Release v1.X.X"
-  ```
-- [ ] **Push the tag to GitHub:**
-  ```bash
-  git push origin v1.X.X
-  ```
+- [ ] **Sync store copy manually if needed:**
+  [`CHROMEWEBSTORE.md`](CHROMEWEBSTORE.md) Version History is **not** auto-updated — edit it in the same commit or a follow-up if the store listing changed.
+
+## 2. Tag and Push
+
+- [ ] Create the tag (must match `v*` so `release.yml` triggers):
+
+```bash
+git tag -a vX.Y.Z -m "vX.Y.Z"
+git push origin vX.Y.Z
+```
 
 ---
 
 ## 3. GitHub Actions Workflow Execution
 
-Once the tag is pushed, the GitHub Action starts:
+The pushed `v*` tag triggers `release.yml` (`.github/workflows/release.yml`):
 
 - [ ] **Monitor Workflow:**
-  Check the **Actions** tab on your GitHub repository to ensure the workflow completes successfully.
+  Check the **Actions** tab → **Release Build & Package** run for tag `vX.Y.Z`.
+  It runs the shared `build-verify` action (`bun install` → `check` → `build` → `verify`), then zips `dist/` to `yt-blinders-vX.Y.Z.zip`.
 - [ ] **Verify GitHub Release Draft:**
-  Once completed, go to your repository's **Releases** page:
-  - Check the auto-generated release draft notes.
-  - Verify that the artifact `yt-blinders-v1.X.X.zip` is attached as a release asset.
-  - Publish the Release.
+  Go to **Releases** → `vX.Y.Z` (created as a **draft** by `release.yml` via `softprops/action-gh-release`):
+  - Release notes are auto-generated (`generate_release_notes: true`) — edit them if needed.
+  - Verify `yt-blinders-vX.Y.Z.zip` was uploaded (`fail_on_unmatched_files: true`).
+  - Click **Publish release** when ready.
+
+Local pre-checks (optional, CI already runs them):
+
+```bash
+bun run check
+bun run build
+bun run verify
+```
 
 ---
 
 ## 4. Chrome Web Store Publishing
 
 - [ ] **Download the Zip Asset:**
-  Download the attached `yt-blinders-v1.X.X.zip` file from the newly published GitHub Release page.
+  Download the attached `yt-blinders-vX.Y.Z.zip` file from the GitHub Release page.
 - [ ] **Upload to Chrome Developer Console:**
   1. Go to the [Chrome Web Store Developer Dashboard](https://developer.chrome.com/docs/webstore/publish/).
   2. Select the **YT Blinders** item (or create a new item if this is the initial submission).
-  3. Upload the downloaded `yt-blinders-v1.X.X.zip` package in the **Package** tab.
+  3. Upload the downloaded `yt-blinders-vX.Y.Z.zip` package in the **Package** tab.
 - [ ] **Review Store Listings:**
-  Verify listing copy against [`CHROMEWEBSTORE.md`](file:///Users/sanath/git_views_sanath/yt-blinders/CHROMEWEBSTORE.md) if changes were made to descriptions, screenshots, or privacy policies.
+  Verify listing copy against [`CHROMEWEBSTORE.md`](CHROMEWEBSTORE.md) if changes were made to descriptions, screenshots, or privacy policies.
 - [ ] **Submit for Review:**
   Click **Submit for review**.

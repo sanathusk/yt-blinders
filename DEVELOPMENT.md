@@ -60,3 +60,12 @@ $ npm run verify
 5. Select the `dist/` directory inside this repository:
    `<git_root>/yt-blinders/dist`
 6. Open [YouTube](https://www.youtube.com/) and test toggling greying modes on Home Feed, Search Results, Related Videos, and Comments.
+
+## 📦 Releasing
+
+Releases are manual tag releases (see `release-checklist.md`):
+
+1. Bump `package.json` + `manifest.json` to `X.Y.Z`, commit and push to `main`.
+2. Tag and push: `git tag -a vX.Y.Z -m "vX.Y.Z" && git push origin vX.Y.Z`.
+3. `release.yml` builds, verifies, zips `dist/`, and creates a **draft** GitHub Release with generated notes + zip asset — publish it when ready.
+4. `CHROMEWEBSTORE.md` Version History is still manual — update it if needed.
