@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>YT Blinders — Learn on YouTube. Don't Get Lost in It.</title>
+  <meta name="description" content="Free, open-source Chrome extension to grey out clickbait thumbnails and distracting feeds for focused YouTube learning.">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header class="nav">
+    <div class="container nav-inner">
+      <a href="#content" class="nav-brand" data-od-id="nav-brand">
+        <!-- Authentic Extension Logo Asset -->
+        <img src="./logo.png" alt="YT Blinders Logo" class="brand-logo-img" width="32" height="32" />
+        <span>YT Blinders</span>
+      </a>
+
+      <div class="nav-right">
+        <ul class="nav-links">
+          <li><a href="#features" class="nav-link">Features</a></li>
+          <li><a href="#demo" class="nav-link">Demo</a></li>
+          <li><a href="#privacy" class="nav-link">Privacy</a></li>
+          <li>
+            <a href="https://github.com/sanathusk/yt-blinders" target="_blank" rel="noopener noreferrer" class="nav-link">
+              GitHub
+              <img class="nav-star-badge" src="https://img.shields.io/github/stars/sanathusk/yt-blinders?style=flat&logo=github&label=Stars" alt="GitHub stars" height="20" loading="lazy" title="GitHub Stars">
+            </a>
+          </li>
+        </ul>
+
+        <!-- Dark/Light Mode Toggle -->
+        <button type="button" id="themeToggleBtn" class="theme-toggle" aria-label="Toggle YouTube dark theme" title="Toggle YouTube dark theme">
+          <svg id="themeIconSun" style="display:none;" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg id="themeIconMoon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <a href="https://chromewebstore.google.com/detail/yt-blinders/hljgphiicdbaofhhoalbecgcokjcemjp" class="btn btn-primary btn-nav" data-od-id="nav-cta-add-chrome">Add to Chrome</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="content">
+    <!-- Hero Section -->
+    <section class="hero" data-od-id="section-hero">
+      <div class="container">
+        <div class="hero-eyebrow">
+          <span>Focus-First YouTube Utility</span>
+        </div>
+        <h1 class="hero-title">Learn on YouTube.<br>Don't Get Lost in It.</h1>
+        <p class="hero-subtitle">
+          Grey out clickbait thumbnails and distracting feeds. Keep the knowledge, lose the algorithmic rabbit hole.
+        </p>
+
+        <div class="hero-actions">
+          <a href="https://chromewebstore.google.com/detail/yt-blinders/hljgphiicdbaofhhoalbecgcokjcemjp" class="btn btn-primary" data-od-id="hero-cta-primary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5v-9l6 4.5-6 4.5z"/>
+            </svg>
+            Add to Chrome — Free
+          </a>
+          <a href="https://github.com/sanathusk/yt-blinders" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" data-od-id="hero-cta-github">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+            </svg>
+            View on GitHub
+          </a>
+        </div>
+
+        <div class="hero-trust-text">
+          <span>Free</span>
+          <span>•</span>
+          <span>100% Open Source (Apache 2.0)</span>
+          <span>•</span>
+          <span>No tracking or telemetry</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Demo Video Section (Above the fold hero visual) -->
+    <section class="demo-section" id="demo" data-od-id="section-demo">
+      <div class="container">
+        <div class="video-wrapper">
+          <div class="video-aspect">
+            <iframe
+              src="https://www.youtube.com/embed/lkllXHwkyKA"
+              title="YT Blinders Chrome Extension Demo"
+              loading="lazy"
+              allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen>
+            </iframe>
+          </div>
+        </div>
+        <div class="video-caption">
+          <span class="pulse-indicator"></span>
+          <span>Watch: thumbnails and clickbait feeds greyed out in one click.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- The Problem Section -->
+    <section class="problem-section" id="problem" data-od-id="section-problem">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-kicker">The Dilemma</div>
+          <h2 class="section-title">Built for study, hijacked by feeds</h2>
+          <p class="section-desc">YouTube holds the world's best tutorials, yet its algorithms are optimized to derail your focus.</p>
+        </div>
+
+        <div class="grid-3">
+          <div class="card" data-od-id="problem-card-1">
+            <div class="card-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="8" x2="12" y2="12"></line>
+                <line x1="12" y1="16" x2="12.01" y2="16"></line>
+              </svg>
+            </div>
+            <h3 class="card-title">Clickbait Hijacks Attention</h3>
+            <p class="card-body">High-contrast, exaggerated thumbnails trigger involuntary curiosity clicks before you even search your topic.</p>
+          </div>
+
+          <div class="card" data-od-id="problem-card-2">
+            <div class="card-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false">
+                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+              </svg>
+            </div>
+            <h3 class="card-title">Algorithm Derails Intent</h3>
+            <p class="card-body">Sidebar recommendations and homepage feeds continuously lure you into endless, unrelated rabbit holes.</p>
+          </div>
+
+          <div class="card" data-od-id="problem-card-3">
+            <div class="card-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false">
+                <polygon points="5 3 19 12 5 21 5 3"></polygon>
+              </svg>
+            </div>
+            <h3 class="card-title">Autoplay Previews Hook You</h3>
+            <p class="card-body">Hovering over search cards triggers autoplay animations that steal executive control before you choose.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works / Modes & Controls -->
+    <section class="modes-section" id="features" data-od-id="section-features">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-kicker">How It Works</div>
+          <h2 class="section-title">Granular control per surface</h2>
+          <p class="section-desc">You choose per surface. Intentional when you want it, invisible when you don't.</p>
+        </div>
+
+        <div class="mode-cards-grid">
+          <!-- Mode 1 -->
+          <div class="mode-card" data-od-id="mode-card-grey">
+            <span class="mode-tag">Mode 1</span>
+            <h3 class="mode-title">Hide Thumbnails</h3>
+            <p class="mode-desc">Removes visual clickbait while keeping video titles and channels crisp and legible.</p>
+            <div class="sim-box">
+              <div class="sim-thumb greyed">GREYED</div>
+              <div class="sim-content">
+                <div class="sim-line w-80"></div>
+                <div class="sim-line w-50"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Mode 2 -->
+          <div class="mode-card" data-od-id="mode-card-hide">
+            <span class="mode-tag">Mode 2</span>
+            <h3 class="mode-title">Hide Full Cards</h3>
+            <p class="mode-desc">Eliminates distracting feeds completely (e.g., wipe the Home feed and Shorts entirely).</p>
+            <div class="sim-box" style="justify-content: center; height: 74px;">
+              <span style="font-size: 0.8rem; color: var(--muted); font-style: italic;">Feed section hidden clean</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4 Surfaces Grid -->
+        <div class="surface-toggles-card" data-od-id="surface-controls-matrix">
+          <div class="surface-toggles-header">
+            <div>
+              <h3 style="font-size: 1.05rem; font-weight: 700; color: var(--fg);">Per-Surface Blinder Coverage</h3>
+              <p style="font-size: 0.85rem; color: var(--muted);">Toggle blinder intensity independently across YouTube surfaces</p>
+            </div>
+            <span style="font-size: 0.78rem; font-family: monospace; background: var(--surface-elevated); padding: 4px 8px; border-radius: 4px; border: 1px solid var(--border);">Local Storage Sync</span>
+          </div>
+
+          <div class="surface-toggles-grid">
+            <div class="surface-toggle-item">
+              <div class="toggle-top">
+                <span class="toggle-label">Home Feed</span>
+                <div class="toggle-switch-ui"></div>
+              </div>
+              <span class="toggle-path">youtube.com/</span>
+            </div>
+
+            <div class="surface-toggle-item">
+              <div class="toggle-top">
+                <span class="toggle-label">Search Results</span>
+                <div class="toggle-switch-ui"></div>
+              </div>
+              <span class="toggle-path">/results</span>
+            </div>
+
+            <div class="surface-toggle-item">
+              <div class="toggle-top">
+                <span class="toggle-label">Related Videos</span>
+                <div class="toggle-switch-ui"></div>
+              </div>
+              <span class="toggle-path">/watch + Shorts</span>
+            </div>
+
+            <div class="surface-toggle-item">
+              <div class="toggle-top">
+                <span class="toggle-label">Comments</span>
+                <div class="toggle-switch-ui"></div>
+              </div>
+              <span class="toggle-path">#comments</span>
+            </div>
+          </div>
+
+          <div class="hover-reveal-banner">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false">
+              <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+              <circle cx="12" cy="12" r="3"></circle>
+            </svg>
+            <span><strong>Reveal on Hover:</strong> Need to preview a legitimate diagram? Simply hover over a greyed card to peek intentionally. Includes automatic hover-preview autoplay blocking.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Privacy & Open Source -->
+    <section class="privacy-section" id="privacy" data-od-id="section-privacy">
+      <div class="container">
+        <div class="privacy-card">
+          <div class="section-header" style="margin-bottom: 0;">
+            <div class="section-kicker">Integrity & Security</div>
+            <h2 class="section-title">Zero telemetry. Zero tracking.</h2>
+            <p class="section-desc">YT Blinders runs entirely inside your browser. No external API requests, no user accounts, no hidden metrics.</p>
+          </div>
+
+          <div class="privacy-points">
+            <div class="privacy-point" data-od-id="privacy-point-1">
+              <div class="check-icon-circle">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true" focusable="false">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </div>
+              <h4 class="point-title">Only 2 Permissions</h4>
+              <p class="point-body">Requests strictly <code>storage</code> to save your blinder choices, plus <code>youtube.com</code> host access to apply styles.</p>
+            </div>
+
+            <div class="privacy-point" data-od-id="privacy-point-2">
+              <div class="check-icon-circle">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true" focusable="false">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </div>
+              <h4 class="point-title">Zero Telemetry</h4>
+              <p class="point-body">No analytics, no beacons, and no tracking scripts. Your viewing patterns stay 100% private to your device.</p>
+            </div>
+
+            <div class="privacy-point" data-od-id="privacy-point-3">
+              <div class="check-icon-circle">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true" focusable="false">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </div>
+              <h4 class="point-title">Audit on GitHub</h4>
+              <p class="point-body">100% open source under Apache 2.0. Written in clean TypeScript + Vite with Manifest V3 standards.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Install Steps & Final CTA -->
+    <section class="install-section" id="install" data-od-id="section-install">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-kicker">Get Started in 10 Seconds</div>
+          <h2 class="section-title">Reclaim your YouTube in 3 steps</h2>
+        </div>
+
+        <div class="steps-row">
+          <div class="step-card" data-od-id="step-card-1">
+            <span class="step-number">01</span>
+            <h4 class="step-title">Install from Chrome Store</h4>
+            <p class="step-desc">Click "Add to Chrome". Takes one second with zero sign-in required.</p>
+          </div>
+
+          <div class="step-card" data-od-id="step-card-2">
+            <span class="step-number">02</span>
+            <h4 class="step-title">Pin the Extension</h4>
+            <p class="step-desc">Pin the blinder icon to your toolbar for instant popup access.</p>
+          </div>
+
+          <div class="step-card" data-od-id="step-card-3">
+            <span class="step-number">03</span>
+            <h4 class="step-title">Pick What to Grey Out</h4>
+            <p class="step-desc">Select whether you want to dim thumbnails or hide full feeds.</p>
+          </div>
+        </div>
+
+        <a href="https://chromewebstore.google.com/detail/yt-blinders/hljgphiicdbaofhhoalbecgcokjcemjp" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="padding: 12px 28px; font-size: 1rem;" data-od-id="final-cta-add-chrome">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5v-9l6 4.5-6 4.5z"/>
+          </svg>
+          Add to Chrome — It's Free
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" data-od-id="footer">
+    <div class="container footer-content">
+      <!-- Supporter & Social Channels -->
+      <div class="footer-support-row">
+        <!-- Buy Me A Coffee -->
+        <a href="https://buymeacoffee.com/sanath.usk" target="_blank" rel="noopener noreferrer" class="support-btn bmac-btn" data-od-id="footer-bmac">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+            <path d="M20.216 6.415l-.132-.666c-.119-.597-.388-1.15-.78-1.602-.49-.567-1.164-.916-1.9-.982-1.745-.157-5.021-.165-8.404-.165s-6.659.008-8.404.165c-.736.066-1.41.415-1.9.982-.392.452-.661 1.005-.78 1.602l-.132.666c-.157.785-.24 1.585-.248 2.388v.228c.026 2.072.775 4.07 2.128 5.673 1.54 1.823 3.738 2.996 6.134 3.277 1.03.12 2.067.18 3.102.18s2.072-.06 3.102-.18c2.396-.281 4.594-1.454 6.134-3.277 1.353-1.603 2.102-3.601 2.128-5.673v-.228c-.008-.803-.091-1.603-.248-2.388zm-3.216 4.673c-.02 1.554-.582 3.053-1.597 4.256-1.155 1.368-2.804 2.247-4.603 2.458-.773.09-1.55.135-2.328.135s-1.555-.045-2.328-.135c-1.799-.211-3.448-1.09-4.603-2.458-1.015-1.203-1.577-2.702-1.597-4.256v-.171c.006-.602.068-1.203.186-1.792l.099-.5c.045-.224.146-.432.293-.602.184-.213.437-.344.714-.369 1.636-.147 4.707-.154 7.236-.154s5.6.007 7.236.154c.277.025.53.156.714.369.147.17.248.378.293.602l.099.5c.118.589.18 1.19.186 1.792v.171z"/>
+            <path d="M22 6.5h-1v4h1c.827 0 1.5-.673 1.5-1.5v-1c0-.827-.673-1.5-1.5-1.5z"/>
+          </svg>
+          Buy Me A Coffee
+        </a>
+
+        <!-- YouTube Channel Link with Official Logo -->
+        <a href="https://www.youtube.com/@yt-blinders" target="_blank" rel="noopener noreferrer" class="support-btn yt-channel-btn" data-od-id="footer-yt-channel" title="Subscribe to YT Blinders on YouTube">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814z" fill="#FF0000"/>
+            <path d="M9.545 15.568V8.432L15.818 12l-6.273 3.568z" fill="#FFFFFF"/>
+          </svg>
+          <span>YouTube Channel</span>
+        </a>
+
+        <!-- GitHub Repo & Star Badge -->
+        <a href="https://github.com/sanathusk/yt-blinders" target="_blank" rel="noopener noreferrer" class="support-btn gh-btn" data-od-id="footer-github">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+          </svg>
+          <span>Star on GitHub</span>
+        </a>
+      </div>
+
+      <!-- Made with love attribution -->
+      <div class="footer-attribution" data-od-id="footer-attribution">
+        <span>Made with</span>
+        <span class="heart-icon" role="img" aria-label="love">❤️</span>
+        <span>by</span>
+        <a href="https://github.com/sanathusk" target="_blank" rel="noopener noreferrer">USK</a>
+      </div>
+
+      <!-- Legal & Project Meta -->
+      <div class="footer-meta">
+        <span>© YT Blinders</span>
+        <span>•</span>
+        <span>Built to protect attention.</span>
+        <span>•</span>
+        <a href="https://github.com/sanathusk/yt-blinders/blob/main/LICENSE.txt" target="_blank" rel="noopener noreferrer">Apache 2.0 License</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./theme.js" defer></script>
+</body>
+</html>

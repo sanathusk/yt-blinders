@@ -9,6 +9,7 @@
 		"check": "bunx --bun @biomejs/biome check .",
 		"check:fix": "bunx --bun @biomejs/biome check --write",
 		"dev": "vite build --watch",
+		"preview:landing": "bunx --bun serve docs -l 8901",
 		"verify": "node scripts/verify-extension.js"
 	},
 	"keywords": [
